@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,16 +7,20 @@
 <title>Shruti Hardia | Full Stack .NET & Cloud Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 :root{
 --bg:#f7f9fc;
 --card:#ffffff;
---primary:#2f3e46;
+--primary:#667eea;
+--primary-dark:#5568d3;
 --secondary:#5f6c72;
---accent:#6c7a89;
+--accent:#764ba2;
 --border:#e3e8ee;
+--gradient:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+--text:#2f3e46;
 }
 
 *{
@@ -29,7 +33,7 @@ scroll-behavior:smooth;
 
 body{
 background:var(--bg);
-color:var(--primary);
+color:var(--text);
 }
 
 /* NAVBAR */
@@ -54,7 +58,7 @@ font-size:14px;
 }
 
 nav a:hover{
-color:black;
+color:var(--primary);
 }
 
 /* HOME */
@@ -65,25 +69,62 @@ display:flex;
 align-items:center;
 justify-content:center;
 padding:100px 20px 40px 20px;
+background:var(--gradient);
 }
 
 .hero{
 display:flex;
+flex-direction:row;
 flex-wrap:wrap;
 align-items:center;
 gap:50px;
 max-width:1000px;
+background:white;
+padding:50px;
+border-radius:15px;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
 }
 
 .hero img{
-width:180px;
-border-radius:50%;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+order:1;
+}
+
+.hero-text{
+order:2;
+flex:1;
+}
+
+.hero img{
+width:250px;
+border-radius:8px;
+box-shadow:0 4px 15px rgba(0,0,0,0.15);
+transition:transform 0.3s ease;
+}
+
+.hero img:hover{
+transform:scale(1.05);
 }
 
 .hero-text h1{
 font-size:42px;
-margin-bottom:10px;
+margin-bottom:15px;
+color:var(--primary);
+}
+
+.hero-subtitle{
+font-size:16px;
+font-weight:600;
+color:var(--primary);
+margin-bottom:20px;
+line-height:1.5;
+max-width:700px;
+}
+
+.hero-description{
+color:var(--secondary);
+max-width:700px;
+line-height:1.7;
+font-size:15px;
 }
 
 .hero-text p{
@@ -100,15 +141,224 @@ margin-top:20px;
 display:inline-block;
 margin:6px;
 padding:10px 18px;
-background:var(--primary);
+background:var(--gradient);
 color:white;
 text-decoration:none;
 border-radius:6px;
 font-size:14px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+box-shadow:0 4px 10px rgba(102, 126, 234, 0.3);
 }
 
 .buttons a:hover{
-opacity:.85;
+transform:translateY(-2px);
+box-shadow:0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* PUBLICATIONS */
+
+.publications-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+gap:20px;
+margin-bottom:30px;
+}
+
+.publication-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:20px;
+border-radius:8px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+display:flex;
+flex-direction:column;
+}
+
+.publication-card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.publication-card h3{
+font-size:18px;
+margin-bottom:12px;
+color:var(--primary);
+line-height:1.4;
+}
+
+.publication-card .abstract{
+color:var(--secondary);
+font-size:14px;
+line-height:1.6;
+margin-bottom:auto;
+display:-webkit-box;
+-webkit-line-clamp:10;
+-webkit-box-orient:vertical;
+overflow:hidden;
+text-overflow:ellipsis;
+max-height:14em;
+flex-grow:1;
+}
+
+.publication-card .btn{
+display:inline-block;
+padding:8px 16px;
+background:var(--gradient);
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:13px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+margin-top:15px;
+align-self:center;
+box-shadow:0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.publication-card .btn:hover{
+transform:translateY(-2px);
+box-shadow:0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.scholar-link{
+text-align:center;
+margin-top:20px;
+}
+
+/* VOLUNTEER & MEMBERSHIP */
+
+.volunteer-membership-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+gap:20px;
+}
+
+.vm-card{
+background:var(--card);
+border:1px solid var(--border);
+padding:25px;
+border-radius:8px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.vm-card h3{
+font-size:18px;
+margin-bottom:15px;
+color:var(--primary);
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.vm-card h3 i{
+font-size:24px;
+color:var(--accent);
+}
+
+.vm-card p{
+color:var(--secondary);
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.vm-card p a{
+color:var(--primary);
+text-decoration:none;
+transition:color 0.3s ease;
+}
+
+.vm-card p a:hover{
+color:var(--accent);
+text-decoration:underline;
+}
+
+.vm-card .badges{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.vm-card .badge{
+display:inline-block;
+background:var(--bg);
+border:1px solid var(--border);
+padding:8px 14px;
+border-radius:6px;
+font-size:13px;
+color:var(--text);
+transition:background 0.3s ease;
+}
+
+.vm-card .badge:hover{
+background:var(--primary);
+color:white;
+border-color:var(--primary);
+}
+
+.vm-card a.badge{
+text-decoration:none;
+}
+
+/* CONTACT ICONS */
+
+.contact-icons{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:40px 20px;
+}
+
+.contact-icon{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-decoration:none;
+transition:transform 0.3s ease;
+}
+
+.contact-icon:hover{
+transform:translateY(-5px);
+}
+
+.contact-icon .icon{
+width:80px;
+height:80px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:36px;
+margin-bottom:10px;
+transition:box-shadow 0.3s ease;
+}
+
+.contact-icon:hover .icon{
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+
+.contact-icon.linkedin .icon{
+background:var(--gradient);
+color:white;
+}
+
+.contact-icon.github .icon{
+background:var(--text);
+color:white;
+}
+
+.contact-icon.email .icon{
+background:var(--accent);
+color:white;
+}
+
+.contact-icon span{
+font-size:14px;
+color:var(--text);
+font-weight:500;
 }
 
 /* SECTIONS */
@@ -120,8 +370,22 @@ padding:70px 20px;
 }
 
 h2{
-margin-bottom:20px;
-font-size:26px;
+margin-bottom:30px;
+font-size:32px;
+color:var(--text);
+position:relative;
+padding-bottom:15px;
+}
+
+h2::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:60px;
+height:4px;
+background:var(--gradient);
+border-radius:2px;
 }
 
 .card{
@@ -132,39 +396,629 @@ border-radius:8px;
 margin-bottom:15px;
 }
 
-/* TIMELINE */
+/* ABOUT SECTION */
 
-.timeline{
-border-left:3px solid var(--border);
-padding-left:20px;
+.about-content{
+display:flex;
+flex-direction:column;
+gap:20px;
 }
 
-.timeline-item{
-margin-bottom:20px;
+.about-intro{
+background:var(--gradient);
+color:white;
+border:none;
+padding:30px;
+text-align:center;
+}
+
+.about-intro .lead{
+font-size:18px;
+line-height:1.6;
+margin:0;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+gap:20px;
+}
+
+.about-card{
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.about-card h3{
+font-size:20px;
+margin-bottom:15px;
+color:var(--primary);
+}
+
+.about-card p{
+line-height:1.7;
+color:var(--text);
+margin:0;
+}
+
+.about-card strong{
+color:var(--primary);
+font-weight:600;
+}
+
+/* EXPERIENCE SECTION */
+
+.experience-intro{
+text-align:center;
+max-width:700px;
+margin:0 auto 40px;
+color:var(--secondary);
+line-height:1.7;
+font-size:16px;
+}
+
+.experience-grid{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.exp-card{
+background:white;
+border-radius:12px;
+padding:25px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:all 0.3s ease;
+border:1px solid var(--border);
+}
+
+.exp-card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 30px rgba(102, 126, 234, 0.15);
+}
+
+.exp-header{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+margin-bottom:15px;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.exp-info{
+flex:1;
+min-width:250px;
+}
+
+.exp-card h3{
+font-size:20px;
+color:var(--text);
+margin-bottom:5px;
+font-weight:600;
+}
+
+.exp-company{
+font-size:16px;
+color:var(--primary);
+font-weight:500;
+margin-bottom:5px;
+}
+
+.exp-meta{
+font-size:13px;
+color:var(--secondary);
+}
+
+.exp-btn{
+background:var(--gradient);
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+font-size:14px;
+font-weight:500;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+transition:all 0.3s ease;
+box-shadow:0 2px 8px rgba(102, 126, 234, 0.3);
+white-space:nowrap;
+}
+
+.exp-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.exp-desc{
+color:var(--secondary);
+line-height:1.7;
+margin-bottom:15px;
+}
+
+.exp-tags{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.exp-tag{
+background:var(--bg);
+border:1px solid var(--primary);
+color:var(--text);
+padding:6px 12px;
+border-radius:15px;
+font-size:12px;
+font-weight:500;
+transition:all 0.3s ease;
+}
+
+.exp-tag:hover{
+background:var(--gradient);
+color:white;
+border-color:var(--primary);
+}
+
+.exp-tag-more{
+background:var(--bg);
+border:1px solid var(--border);
+color:var(--secondary);
+padding:6px 12px;
+border-radius:15px;
+font-size:12px;
+}
+
+/* EXPERIENCE MODAL */
+
+.exp-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:2000;
+overflow-y:auto;
+padding:20px;
+}
+
+.exp-modal:target{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.exp-modal-content{
+background:white;
+border-radius:15px;
+max-width:900px;
+width:100%;
+max-height:90vh;
+overflow-y:auto;
+position:relative;
+animation:modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn{
+from{
+opacity:0;
+transform:translateY(-50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.exp-modal-header{
+padding:30px;
+border-bottom:1px solid var(--border);
+position:relative;
+}
+
+.exp-modal-close{
+position:absolute;
+top:20px;
+right:20px;
+width:35px;
+height:35px;
+border-radius:50%;
+background:var(--bg);
+border:none;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+color:var(--secondary);
+text-decoration:none;
+transition:all 0.3s ease;
+line-height:1;
+}
+
+.exp-modal-close:hover{
+background:var(--primary);
+color:white;
+transform:rotate(90deg);
+}
+
+.exp-modal-body{
+padding:30px;
+}
+
+.exp-modal-section{
+margin-bottom:30px;
+}
+
+.exp-modal-section:last-child{
+margin-bottom:0;
+}
+
+.exp-modal-section h4{
+font-size:18px;
+color:var(--text);
+margin-bottom:15px;
+font-weight:600;
+}
+
+.exp-modal-section p{
+color:var(--secondary);
+line-height:1.7;
+}
+
+.exp-modal-list{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.exp-modal-list li{
+display:flex;
+align-items:flex-start;
+margin-bottom:12px;
+color:var(--secondary);
+line-height:1.6;
+}
+
+.exp-modal-list li::before{
+content:'✓';
+color:var(--primary);
+font-weight:bold;
+margin-right:12px;
+flex-shrink:0;
+font-size:16px;
+}
+
+/* ACHIEVEMENTS & RECOGNITION */
+
+.achievements-intro{
+text-align:center;
+max-width:700px;
+margin:0 auto 40px;
+color:var(--secondary);
+line-height:1.7;
+font-size:16px;
+}
+
+.filter-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-bottom:50px;
+}
+
+.filter-btn{
+padding:10px 24px;
+border-radius:25px;
+font-weight:500;
+font-size:14px;
+border:1px solid var(--border);
+background:white;
+color:var(--secondary);
+cursor:pointer;
+transition:all 0.3s ease;
+}
+
+.filter-btn:hover{
+background:var(--bg);
+border-color:var(--primary);
+}
+
+.filter-btn.active{
+background:var(--gradient);
+color:white;
+border-color:var(--primary);
+box-shadow:0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.achievements-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+gap:25px;
+}
+
+.achievement-card{
+background:white;
+border-radius:12px;
+padding:25px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:all 0.3s ease;
+border:1px solid var(--border);
+cursor:pointer;
+text-align:center;
+text-decoration:none;
+display:block;
+color:inherit;
+}
+
+.achievement-card:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 35px rgba(102, 126, 234, 0.2);
+}
+
+.achievement-icon{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.achievement-card h3{
+font-size:18px;
+color:var(--text);
+margin-bottom:8px;
+font-weight:600;
+line-height:1.4;
+display:-webkit-box;
+-webkit-line-clamp:2;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}
+
+.achievement-org{
+font-size:14px;
+color:var(--secondary);
+margin-bottom:5px;
+}
+
+.achievement-year{
+font-size:13px;
+color:var(--secondary);
+opacity:0.8;
+margin-bottom:15px;
+}
+
+.achievement-badge{
+display:inline-block;
+background:var(--bg);
+border:1px solid var(--primary);
+color:var(--text);
+padding:6px 16px;
+border-radius:20px;
+font-size:12px;
+font-weight:500;
+margin-bottom:15px;
+}
+
+.achievement-desc{
+font-size:14px;
+color:var(--secondary);
+line-height:1.6;
+display:-webkit-box;
+-webkit-line-clamp:3;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}
+
+.achievement-card[data-category]{
+display:block;
+}
+
+.achievement-card.hidden{
+display:none;
+}
+
+/* ACHIEVEMENT MODAL */
+
+.achievement-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:2000;
+overflow-y:auto;
+padding:20px;
+}
+
+.achievement-modal:target{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.achievement-modal-content{
+background:white;
+border-radius:15px;
+max-width:700px;
+width:100%;
+max-height:90vh;
+overflow-y:auto;
+position:relative;
+animation:modalSlideIn 0.3s ease;
+}
+
+.achievement-modal-header{
+padding:30px;
+border-bottom:1px solid var(--border);
+position:relative;
+text-align:center;
+}
+
+.achievement-modal-close{
+position:absolute;
+top:20px;
+right:20px;
+width:35px;
+height:35px;
+border-radius:50%;
+background:var(--bg);
+border:none;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+color:var(--secondary);
+text-decoration:none;
+transition:all 0.3s ease;
+line-height:1;
+}
+
+.achievement-modal-close:hover{
+background:var(--primary);
+color:white;
+transform:rotate(90deg);
+}
+
+.achievement-modal-icon{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.achievement-modal-body{
+padding:30px;
+}
+
+.achievement-modal-section{
+margin-bottom:25px;
+}
+
+.achievement-modal-section:last-child{
+margin-bottom:0;
+}
+
+.achievement-modal-section h4{
+font-size:16px;
+color:var(--text);
+margin-bottom:10px;
+font-weight:600;
+text-transform:uppercase;
+letter-spacing:0.5px;
+}
+
+.achievement-modal-section p{
+color:var(--secondary);
+line-height:1.7;
+}
+
+.achievement-verify-btn{
+display:inline-block;
+background:var(--gradient);
+color:white;
+padding:12px 24px;
+border-radius:6px;
+text-decoration:none;
+font-weight:500;
+font-size:14px;
+transition:all 0.3s ease;
+box-shadow:0 2px 8px rgba(102, 126, 234, 0.3);
+margin-top:10px;
+}
+
+.achievement-verify-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 /* SKILLS */
 
-.skills span,
-.cert span,
-.membership span,
-.ach span{
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));
+gap:20px;
+padding:0;
+}
 
-display:inline-block;
+.skill-card{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:12px;
+padding:24px 16px;
+background:linear-gradient(135deg, #f5f5f5 0%, #ffffff 50%, #f5f5f5 100%);
 border:1px solid var(--border);
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+transition:all 0.3s ease;
+cursor:default;
+text-align:center;
+}
+
+.skill-card:hover{
+transform:scale(1.1);
+box-shadow:0 8px 25px rgba(102, 126, 234, 0.3);
+border-color:var(--primary);
+}
+
+.skill-icon{
+font-size:36px;
+color:var(--primary);
+}
+
+.skill-icon i{
+color:var(--primary);
+}
+
+.skill-name{
+font-size:12px;
+font-weight:600;
+color:var(--text);
+}
+
+/* Legacy skill badges for certifications */
+.cert span,
+.cert a,
+.membership span{
+display:inline-block;
+background:var(--bg);
+border:1px solid var(--primary);
 padding:8px 14px;
 border-radius:20px;
 margin:5px;
 font-size:14px;
+color:var(--text);
+transition:all 0.3s ease;
+text-decoration:none;
+}
 
+.cert span:hover,
+.cert a:hover,
+.membership span:hover{
+background:var(--gradient);
+color:white;
+border-color:var(--primary);
+transform:translateY(-2px);
+cursor:pointer;
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:30px;
-color:var(--secondary);
+padding:40px;
+background:var(--gradient);
+color:white;
+font-size:14px;
+margin-top:50px;
 }
 
 </style>
@@ -177,11 +1031,9 @@ color:var(--secondary);
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#certifications">Certifications</a>
+<!-- <a href="#projects">Projects</a> -->
 <a href="#publications">Publications</a>
-<a href="#volunteer">Volunteer</a>
-<a href="#membership">Membership</a>
+<a href="#community">Community</a>
 <a href="#achievements">Achievements</a>
 <a href="#contact">Contact</a>
 
@@ -193,31 +1045,29 @@ color:var(--secondary);
 
 <div class="hero">
 
-<img src="profile.jpeg">
+<img src="assets/profile.jpeg">
 
 <div class="hero-text">
 
 <h1>Shruti Hardia</h1>
 
-<p>
+<p class="hero-subtitle">
+    <b>Full Stack Developer | Cloud Architect | IEEE Published Researcher</b>
+</p>
 
-Senior Full Stack .NET Developer and Cloud Engineer with 10+ years of experience
-architecting scalable enterprise applications, distributed systems,
-and cloud-native platforms using ASP.NET Core, AWS, Kubernetes, and Terraform.
-
-IEEE published researcher and active IEEE Senior Member.
-
+<p class="hero-description">
+Senior Full Stack .NET Developer and Cloud Engineer with 10+ years of experience architecting scalable enterprise applications, distributed systems, and cloud-native platforms using ASP.NET Core, AWS, Kubernetes, and Terraform. IEEE-published researcher focused on cloud computing, AI-driven system reliability, and secure digital infrastructure.
 </p>
 
 <div class="buttons">
 
-<a href="Shruti_Hardia_Resume.pdf" target="_blank">Resume</a>
+<a href="assets/Shruti_Hardia_Resume.pdf" target="_blank">Resume
 
 <a href="https://www.linkedin.com/in/hardia-shruti" target="_blank">LinkedIn</a>
 
 <a href="https://scholar.google.com/citations?hl=en&user=JuTnrssAAAAJ" target="_blank">Google Scholar</a>
 
-<a href="#">GitHub</a>
+<a href="https://github.com/shruti-hardia" target="_blank">GitHub</a>
 
 </div>
 
@@ -233,15 +1083,55 @@ IEEE published researcher and active IEEE Senior Member.
 
 <h2>About</h2>
 
-<div class="card">
+<div class="about-content">
 
-Full Stack .NET Developer specializing in ASP.NET Core, microservices,
-cloud architecture, and distributed systems.
+<div class="card about-intro">
+<p class="lead">
 
-Extensive experience modernizing enterprise applications into scalable AWS-based
-cloud-native environments supporting millions of users.
+Full Stack .NET Developer with nearly a decade of experience designing, modernizing, and securing mission-critical enterprise systems in high-compliance industries, including healthcare and enterprise services.
+</p>
+</div>
 
-IEEE published researcher focused on cloud computing and cybersecurity.
+<div class="about-grid">
+
+<div class="card about-card">
+<h3>💼 Expertise</h3>
+<p>
+I specialize in <strong>ASP.NET Core</strong>, <strong>microservices architecture</strong>, <strong>distributed systems</strong>, <strong>AWS cloud-native solutions</strong>, <strong>Kubernetes-based containerization</strong>, and <strong>DevOps automation</strong>, building scalable platforms that support millions of users.
+</p>
+</div>
+
+<div class="card about-card">
+<h3>☁️ Cloud & Modernization</h3>
+<p>
+
+I have extensive experience transforming legacy enterprise applications into resilient, cloud-native environments on AWS, enhancing scalability, reliability, and security. My work also explores AI-driven system reliability and advanced cloud computing strategies.
+</p>
+</div>
+
+<div class="card about-card">
+<h3>🎓 Background</h3>
+<p>
+
+I hold a Master’s degree in Computer Science and am currently based in the <strong>Chicago area</strong>.
+</p>
+</div>
+
+<div class="card about-card">
+<h3>📚 Research</h3>
+<p>
+An <strong>IEEE-published researcher</strong> in AI/ML, cloud computing and cybersecurity, I actively contribute to advancing secure and scalable digital systems through innovative research and publications.
+</p>
+</div>
+
+<div class="card about-card">
+<h3>🤝 Mentorship</h3>
+<p>
+I mentor aspiring professionals through <strong>Women in Tech</strong> and <strong>IEEE Women in Engineering</strong>, advocating for equitable access and representation in STEM.
+</p>
+</div>
+
+</div>
 
 </div>
 
@@ -251,38 +1141,254 @@ IEEE published researcher focused on cloud computing and cybersecurity.
 
 <section id="experience">
 
-<h2>Experience</h2>
+<h2>Professional Experience</h2>
 
-<div class="card timeline">
-
-<div class="timeline-item">
-
-<b>Senior Full Stack .NET Developer</b>
-
-<p>
-
-Designed scalable microservices, implemented Kubernetes deployments,
-and improved CI/CD deployment speed by 60%.
-
+<p class="experience-intro">
+A journey through my career in software development and AI, showcasing growth and expertise in full-stack technologies and artificial intelligence.
 </p>
 
+<div class="experience-grid">
+
+<!-- TEMPLATE EXPERIENCE CARD - Replace with your actual data -->
+<div class="exp-card">
+<div class="exp-header">
+<div class="exp-info">
+<h3>Software Development Engineer</h3>
+<p class="exp-company">WEX Health Inc.</p>
+<p class="exp-meta">Chicago, IL • June 2021 - Present • Full-time</p>
 </div>
-
-<div class="timeline-item">
-
-<b>Cloud Engineer</b>
-
-<p>
-
-Architected AWS infrastructure using Terraform and containerized workloads.
-
+<a href="#exp1" class="exp-btn">View Details</a>
+</div>
+<p class="exp-desc">
+Experience designing, developing, and deploying fault-tolerant, scalable, and resilient microservices using C#, SQL, .Net Core, and AWS services.
 </p>
-
+<div class="exp-tags">
+<span class="exp-tag">.NET Core</span>
+<span class="exp-tag">AWS</span>
+<span class="exp-tag">Terraform</span>
+<span class="exp-tag">Docker</span>
+<span class="exp-tag">Kubernetes</span>
+<span class="exp-tag">C#</span>
+<span class="exp-tag-more">+8 more</span>
 </div>
+</div>
+
+<!-- Experience 2 -->
+<div class="exp-card">
+<div class="exp-header">
+<div class="exp-info">
+<h3>.NET Developer</h3>
+<p class="exp-company">Benefit Express</p>
+<p class="exp-meta">Schaumburg, IL • Nov 2019 - Jun 2021 • Full-time</p>
+</div>
+<a href="#exp2" class="exp-btn">View Details</a>
+</div>
+<p class="exp-desc">
+Developed and maintained .NET applications, enhancing client support and platform efficiency. Implemented security features and optimized performance across multiple benefit platforms.
+</p>
+<div class="exp-tags">
+<span class="exp-tag">.NET</span>
+<span class="exp-tag">.NET Core</span>
+<span class="exp-tag">C#</span>
+<span class="exp-tag">SQL</span>
+<span class="exp-tag">IIS</span>
+<span class="exp-tag">LDAP</span>
+<span class="exp-tag-more">+6 more</span>
+</div>
+</div>
+
+<!-- Experience 3 -->
+<div class="exp-card">
+<div class="exp-header">
+<div class="exp-info">
+<h3>.NET Developer</h3>
+<p class="exp-company">Antra</p>
+<p class="exp-meta">Dulles, VA • Apr 2016 - Nov 2019 • Full-time</p>
+</div>
+<a href="#exp3" class="exp-btn">View Details</a>
+</div>
+<p class="exp-desc">
+Developed .NET applications improving client satisfaction and system reliability. Led production support, implemented SSO authentication, and optimized SQL performance while establishing monitoring solutions to reduce system downtime.
+</p>
+<div class="exp-tags">
+<span class="exp-tag">.NET</span>
+<span class="exp-tag">C#</span>
+<span class="exp-tag">SQL</span>
+<span class="exp-tag">IIS</span>
+<span class="exp-tag">SSO</span>
+<span class="exp-tag">Production Support</span>
+<span class="exp-tag-more">+3 more</span>
+</div>
+</div>
+
+<!-- Add more experience cards here -->
 
 </div>
 
 </section>
+
+<!-- EXPERIENCE MODALS -->
+
+<!-- Modal Template -->
+<div id="exp1" class="exp-modal">
+<div class="exp-modal-content">
+<div class="exp-modal-header">
+<a href="#experience" class="exp-modal-close">&times;</a>
+<h3>Software Development Engineer</h3>
+<p class="exp-company">WEX Health Inc.</p>
+<p class="exp-meta">Chicago, IL • June 2021 - Present • Full-time</p>
+</div>
+<div class="exp-modal-body">
+<div class="exp-modal-section">
+<h4>Role Description</h4>
+<p>Experience designing, developing, and deploying fault-tolerant, scalable, and resilient microservices using C#, SQL, .Net Core, and AWS services.</p>
+</div>
+<div class="exp-modal-section">
+<h4>Key Responsibilities</h4>
+<ul class="exp-modal-list">
+<li>Develop .NET Core apps, enhancing HR tools for client satisfaction and operational efficiency</li>
+<li>Optimize AWS infrastructure, boosting deployment speed and reliability</li>
+<li>Lead cloud-native app development with AWS services and Terraform</li>
+<li>Collaborate with teams to resolve issues, ensuring smooth production support</li>
+<li>Foster cross-team collaboration in DevOps practices, unifying development and operations workflows to achieve seamless deployment processes</li>
+<li>Drive infrastructure modernization through containerization, leveraging Docker and Kubernetes to enhance deployment flexibility and system stability</li>
+<li>Implement comprehensive security protocols for healthcare data protection, ensuring regulatory compliance while maintaining system accessibility</li>
+<li>Architect cloud-native applications using AWS services and Terraform, driving modernization through containerized solutions that enhance system resilience</li>
+<li>Spearhead infrastructure optimization initiatives leveraging Docker and Kubernetes, resulting in improved deployment flexibility and system stability</li>
+<li>Establish robust security protocols for healthcare data protection while maintaining seamless system accessibility and regulatory compliance</li>
+<li>Lead .NET Core application development, implementing CI/CD pipelines that enhance operational efficiency and reduce system downtime</li>
+<li>Streamline DevOps workflows through automated testing and deployment strategies, reducing production incidents and improving release consistency</li>
+<li>Pioneer infrastructure modernization efforts, implementing cloud-native patterns that enhance system resilience and operational excellence</li>
+<li>Proficient in Terraform, automating cloud resource provisioning and ensuring scalable, maintainable infrastructure</li>
+<li>Hands-on experience with Angular, building dynamic, responsive, and high-performance user interfaces</li>
+<li>Strong knowledge of GitHub Actions and Azure DevOps, automating build, test, and deployment pipelines for seamless software delivery</li>
+<li>Partner with business analysts and QA teams to translate complex requirements into efficient technical solutions for payroll and HR applications</li>
+<li>Drive production support excellence through systematic issue resolution and proactive database optimization for enhanced platform performance</li>
+<li>Design and implement cloud-native solutions using AWS Lambda and API Gateway, modernizing healthcare platform architecture for enhanced scalability</li>
+<li>Experience in Kafka and event-driven design, enabling high-performance real-time data streaming and asynchronous processing</li>
+</ul>
+</div>
+<div class="exp-modal-section">
+<h4>Technologies Used</h4>
+<div class="exp-tags">
+<span class="exp-tag">.NET Core</span>
+<span class="exp-tag">C#</span>
+<span class="exp-tag">AWS</span>
+<span class="exp-tag">Terraform</span>
+<span class="exp-tag">Docker</span>
+<span class="exp-tag">Kubernetes</span>
+<span class="exp-tag">Angular</span>
+<span class="exp-tag">SQL</span>
+<span class="exp-tag">AWS Lambda</span>
+<span class="exp-tag">API Gateway</span>
+<span class="exp-tag">Kafka</span>
+<span class="exp-tag">GitHub Actions</span>
+<span class="exp-tag">Azure DevOps</span>
+<span class="exp-tag">CI/CD</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal 2 - Benefit Express -->
+<div id="exp2" class="exp-modal">
+<div class="exp-modal-content">
+<div class="exp-modal-header">
+<a href="#experience" class="exp-modal-close">&times;</a>
+<h3>.NET Developer</h3>
+<p class="exp-company">Benefit Express</p>
+<p class="exp-meta">Schaumburg, IL • Nov 2019 - Jun 2021 • Full-time</p>
+</div>
+<div class="exp-modal-body">
+<div class="exp-modal-section">
+<h4>Role Description</h4>
+<p>Developed and maintained .NET applications, enhancing client support and platform efficiency. Implemented security features including SSO and OAuth2, optimized SQL performance, and orchestrated cross-functional development initiatives across multiple benefit platforms.</p>
+</div>
+<div class="exp-modal-section">
+<h4>Key Responsibilities</h4>
+<ul class="exp-modal-list">
+<li>Developed and maintained .NET apps, enhancing client support and platform efficiency</li>
+<li>Implemented SSO using LDAP, improving security and user access</li>
+<li>Configured IIS for hosting, ensuring stable application deployment</li>
+<li>Optimized SQL queries, boosting data retrieval performance</li>
+<li>Utilized GIT for version control, streamlining CI processes</li>
+<li>Streamlined deployment processes through Git version control and CI tools, ensuring consistent application delivery while reducing deployment bottlenecks</li>
+<li>Orchestrated cross-functional development initiatives spanning front-end and back-end technologies, delivering seamless integration of multiple benefit platforms</li>
+<li>Engineered comprehensive security features including OAuth2 authorisation and form-based authentication, enhancing platform protection and user validation</li>
+<li>Architected robust microservices architecture for benefits platform, integrating RESTful APIs and implementing advanced caching mechanisms to enhance system performance</li>
+<li>Spearheaded migration from legacy systems to modern .NET Core framework, reducing system downtime and enhancing platform scalability</li>
+<li>Developed custom middleware solutions for real-time data synchronization between multiple benefit systems, streamlining cross-platform operations</li>
+</ul>
+</div>
+<div class="exp-modal-section">
+<h4>Technologies Used</h4>
+<div class="exp-tags">
+<span class="exp-tag">.NET</span>
+<span class="exp-tag">.NET Core</span>
+<span class="exp-tag">C#</span>
+<span class="exp-tag">SQL</span>
+<span class="exp-tag">IIS</span>
+<span class="exp-tag">LDAP</span>
+<span class="exp-tag">SSO</span>
+<span class="exp-tag">OAuth2</span>
+<span class="exp-tag">Git</span>
+<span class="exp-tag">CI/CD</span>
+<span class="exp-tag">RESTful APIs</span>
+<span class="exp-tag">Microservices</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal 3 - Antra -->
+<div id="exp3" class="exp-modal">
+<div class="exp-modal-content">
+<div class="exp-modal-header">
+<a href="#experience" class="exp-modal-close">&times;</a>
+<h3>.NET Developer</h3>
+<p class="exp-company">Antra</p>
+<p class="exp-meta">Dulles, VA • Apr 2016 - Nov 2019 • Full-time</p>
+</div>
+<div class="exp-modal-body">
+<div class="exp-modal-section">
+<h4>Role Description</h4>
+<p>Developed .NET applications improving client satisfaction and system reliability with measurable outcomes. Led production support initiatives, implemented SSO authentication, and optimized SQL performance while establishing comprehensive monitoring solutions to minimize system downtime.</p>
+</div>
+<div class="exp-modal-section">
+<h4>Key Responsibilities</h4>
+<ul class="exp-modal-list">
+<li>Developed .NET apps, improving client satisfaction and system reliability with measurable outcomes</li>
+<li>Implemented SSO, enhancing user access and significantly strengthening data protection</li>
+<li>Optimized SQL queries, boosting data retrieval efficiency and overall system performance</li>
+<li>Led production support, swiftly resolving technical issues to ensure seamless operations</li>
+<li>Configured IIS servers, guaranteeing reliable deployment and optimal application performance</li>
+<li>Facilitated cross-team knowledge transfer by establishing best practices in .NET development, enhancing overall team productivity and code quality</li>
+<li>Architected and implemented custom monitoring solutions for critical applications, reducing system downtime through proactive issue identification</li>
+<li>Refined IIS server configurations and deployment processes, establishing reliable application hosting environments with enhanced stability</li>
+<li>Engineered robust .NET solutions with integrated SSO authentication, elevating system security while streamlining user access across enterprise applications</li>
+<li>Spearheaded database performance initiatives through advanced SQL query optimization, delivering substantial improvements in data retrieval speed</li>
+<li>Implemented a comprehensive application monitoring framework, minimizing system downtime through early issue detection and rapid resolution</li>
+</ul>
+</div>
+<div class="exp-modal-section">
+<h4>Technologies Used</h4>
+<div class="exp-tags">
+<span class="exp-tag">.NET</span>
+<span class="exp-tag">C#</span>
+<span class="exp-tag">SQL</span>
+<span class="exp-tag">IIS</span>
+<span class="exp-tag">SSO</span>
+<span class="exp-tag">Production Support</span>
+<span class="exp-tag">Database Optimization</span>
+<span class="exp-tag">Application Monitoring</span>
+<span class="exp-tag">Deployment</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <!-- SKILLS -->
 
@@ -290,27 +1396,154 @@ Architected AWS infrastructure using Terraform and containerized workloads.
 
 <h2>Skills</h2>
 
-<div class="card skills">
+<div class="card">
 
-<span>C#</span>
-<span>.NET Core</span>
-<span>ASP.NET Core</span>
-<span>AWS</span>
-<span>Docker</span>
-<span>Kubernetes</span>
-<span>Terraform</span>
-<span>Microservices</span>
-<span>SQL Server</span>
-<span>PostgreSQL</span>
-<span>Angular</span>
-<span>CI/CD</span>
+<div class="skills-grid">
+
+<!-- Backend & Languages -->
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-hashtag"></i></div>
+<div class="skill-name">C#</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-microsoft"></i></div>
+<div class="skill-name">.NET Core</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-code"></i></div>
+<div class="skill-name">ASP.NET Core</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+<div class="skill-name">MVC</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-database"></i></div>
+<div class="skill-name">Entity Framework</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+<div class="skill-name">LINQ</div>
+</div>
+
+<!-- Cloud & Infrastructure -->
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-aws"></i></div>
+<div class="skill-name">AWS</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-bolt"></i></div>
+<div class="skill-name">Lambda</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-docker"></i></div>
+<div class="skill-name">Docker</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-dharmachakra"></i></div>
+<div class="skill-name">Kubernetes</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-cubes"></i></div>
+<div class="skill-name">Terraform</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-infinity"></i></div>
+<div class="skill-name">DevOps</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-sync-alt"></i></div>
+<div class="skill-name">CI/CD</div>
+</div>
+
+<!-- Architecture & APIs -->
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-project-diagram"></i></div>
+<div class="skill-name">Microservices</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-exchange-alt"></i></div>
+<div class="skill-name">REST API</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-stream"></i></div>
+<div class="skill-name">Kafka</div>
+</div>
+
+<!-- Databases -->
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-database"></i></div>
+<div class="skill-name">SQL Server</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fa-solid fa-republican"></i></div>
+<div class="skill-name">PostgreSQL</div>
+</div>
+
+<!-- Frontend -->
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-angular"></i></div>
+<div class="skill-name">Angular</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-js"></i></div>
+<div class="skill-name">JavaScript</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-code"></i></div>
+<div class="skill-name">jQuery</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-html5"></i></div>
+<div class="skill-name">HTML</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+<div class="skill-name">CSS</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+<div class="skill-name">Bootstrap</div>
+</div>
+
+<!-- Tools -->
+<div class="skill-card">
+<div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+<div class="skill-name">Git/GitHub</div>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon"><i class="fas fa-globe"></i></div>
+<div class="skill-name">Web Development</div>
+</div>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- PROJECTS -->
-
+<!-- PROJECTS - Hidden for now, will work on it later -->
+<!--
 <section id="projects">
 
 <h2>Projects</h2>
@@ -332,22 +1565,7 @@ Architected AWS infrastructure using Terraform and containerized workloads.
 </div>
 
 </section>
-
-<!-- CERTIFICATIONS -->
-
-<section id="certifications">
-
-<h2>Certifications</h2>
-
-<div class="card cert">
-
-<span>AWS Certification</span>
-<span>Microsoft Certification</span>
-<span>Kubernetes Certification</span>
-
-</div>
-
-</section>
+-->
 
 <!-- PUBLICATIONS -->
 
@@ -355,69 +1573,331 @@ Architected AWS infrastructure using Terraform and containerized workloads.
 
 <h2>Publications</h2>
 
-<div class="card">
+<div class="publications-grid">
 
-IEEE publications in distributed systems, cloud computing, and cybersecurity.
+<div class="card publication-card">
+<h3>Decentralized Intelligence for Smart Cities: Integrating Federated Learning, Blockchain, and Foundation Models for Privacy-Preserving Urban Data Management</h3>
+<p class="abstract">
+The growing complexity of urban data management in smart cities necessitates innovative solutions that balance predictive accuracy, scalability, and privacy. This paper proposes a novel framework that integrates Federated Learning (FL), Blockchain, and Foundation Models (FMs) to address these challenges. By leveraging FL, data is processed locally on edge devices, ensuring that sensitive information remains private and secure, while the predictive power of FMs enhances real-time decision-making across urban systems. Blockchain technology ensures transparency and trust, providing an immutable ledger for secure governance and operations. The proposed system enables seamless collaboration across diverse data sources while preserving privacy and fostering a decentralized, resilient infrastructure. A practical use case in inventory management and sales forecasting for businesses within a smart city is presented, showcasing how this framework can enhance operational efficiency, reduce costs, and maintain high standards of data protection. This integrated approach sets a new standard for secure, adaptive, and efficient smart city management.
+</p>
+<a href="https://doi.org/10.1109/ISADS66912.2025.00017" target="_blank" class="btn">Read Paper</a>
+</div>
 
+<div class="card publication-card">
+<h3>Synthetic Network Intelligence: Diffusion-Based Data Generation for Secure Communication Analysis</h3>
+<p class="abstract">
+The scarcity of high-quality labeled network data poses a significant challenge for machine learning applications in cybersecurity and traffic analysis. This study presents a novel approach leveraging diffusion models to generate high-fidelity synthetic network traces, preserving critical structural and statistical properties of real-world traffic. By employing an optimized fine-tuning pipeline, controlled generation constraints, and automated post-processing techniques, the framework en-sures compliance with network protocols while enhancing model performance in classification tasks. Experimental evaluations demonstrate that the generated data achieves strong statistical alignment with real traces and serves as an effective augmentation tool for AI-driven network analysis. This research highlights the potential of generative AI in improving data availability for secure communications research.
+</p>
+<a href="https://doi.org/10.1109/ISADS66912.2025.00016" target="_blank" class="btn">Read Paper</a>
+</div>
+
+<div class="card publication-card">
+<h3>A Scalable System for Software Repository Analysis and Retrieva</h3>
+<p class="abstract">
+The rapid growth of modern software ecosystems has resulted in massive, globally distributed code repositories, creating significant challenges in efficient indexing, retrieval, and structural analysis. Existing repository mining tools often struggle to scale, lack deep code structure correlation, or provide limited support for multi-language analysis. This paper introduces SearchSECO, a distributed, language-agnostic search and analysis engine designed for large-scale software repository mining. The system integrates a modular architecture comprising a high-throughput crawler for metadata harvesting, a parallel retriever for repository acquisition, and hybrid parsers leveraging both srcML and custom ANTLR grammars for precise method-level extraction. A distributed Apache Cassandra backend ensures scalable, fault tolerant storage, while a high-performance networking layer enables low-latency client-server communication. Experimental evaluations on diverse open-source datasets demonstrate the system’s ability to process millions of methods across thousands of repositories with near-linear scalability. By linking methods, authors, and version histories across projects, SearchSECO enables advanced cross-repository analytics for vulnerability detection, clone identification, and software evolution studies. This work contributes to the fields of software engineering and repository mining by delivering an extensible framework that combines scal- ability, accuracy, and adaptability to emerging programming languages and repository platforms.
+</p>
+<a href="https://doi.org/10.31224/5321" target="_blank" class="btn">Read Paper</a>
+</div>
+
+</div>
+
+<div class="scholar-link buttons">
+<a href="https://scholar.google.com/citations?hl=en&user=JuTnrssAAAAJ" target="_blank">View All Publications on Google Scholar</a>
+</div>
+
+</section>
+
+<!-- COMMUNITY INVOLVEMENT -->
+
+<section id="community">
+
+<h2>Community Involvement</h2>
+
+<div class="volunteer-membership-grid">
+
+<div class="vm-card">
+<h3><i class="fas fa-hands-helping"></i> Volunteer Work</h3>
+<p>
+<strong><a href="https://ieeechicago.org/wie/" target="_blank">IEEE Women in Engineering (WIE), Treasurer Role, Chicago Section</a></strong>
 <br><br>
+Supporting professional development, STEM outreach, and technical mentoring initiatives to empower women and girls in technology.
+</p>
+</div>
 
-<a href="https://scholar.google.com/citations?hl=en&user=JuTnrssAAAAJ" target="_blank">
+<div class="vm-card">
+<h3><i class="fas fa-users"></i> Professional Memberships</h3>
+<div class="badges">
+<span class="badge">IEEE Senior Member</span>
+<a href="https://ieeechicago.org/wie/" target="_blank" class="badge">IEEE Women in Engineering</a>
+<span class="badge">IEEE Chicago Section</span>
+</div>
+</div>
 
-View Google Scholar Profile
+</div>
 
+</section>
+
+<!-- ACHIEVEMENTS & RECOGNITION -->
+
+<section id="achievements">
+
+<h2>Achievements & Recognition</h2>
+
+<p class="achievements-intro">
+Professional certifications, awards, and recognition received throughout my career in software development.
+</p>
+
+<div class="filter-buttons">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="certification">Certification</button>
+<button class="filter-btn" data-filter="recognition">Recognition</button>
+<button class="filter-btn" data-filter="mentoring">Mentoring</button>
+</div>
+
+<div class="achievements-grid">
+
+<a href="#ach-aws" class="achievement-card" data-category="certification">
+<div class="achievement-icon"><i class="fab fa-aws"></i></div>
+<h3>AWS Certified Solutions Architect - Associate (SAA-C03)</h3>
+<p class="achievement-org">Amazon Web Services</p>
+<p class="achievement-year">Dec 2023 - Dec 2026</p>
+<span class="achievement-badge">Certification</span>
+<p class="achievement-desc">Validates expertise in designing distributed systems on AWS, including compute, networking, storage, and database services. Demonstrates ability to architect secure and robust applications on AWS technologies.</p>
+</a>
+
+<a href="#ach-dotnet" class="achievement-card" data-category="certification">
+<div class="achievement-icon">💻</div>
+<h3>.NET Full Stack Developer Specialization</h3>
+<p class="achievement-org">Linkedin</p>
+<p class="achievement-year">2024</p>
+<span class="achievement-badge">Certification</span>
+<p class="achievement-desc">Completed comprehensive specialization in .NET full stack development, covering frontend and backend technologies, APIs, databases, and modern development practices.</p>
+</a>
+
+<a href="#ach-ieee-wie" class="achievement-card" data-category="mentoring">
+<div class="achievement-icon">👩‍💼</div>
+<h3>IEEE Women in Engineering (WIE), Treasurer Role</h3>
+<p class="achievement-org">IEEE Chicago Section</p>
+<p class="achievement-year">Ongoing</p>
+<span class="achievement-badge">Mentoring</span>
+<p class="achievement-desc">Supporting professional development, STEM outreach, and technical mentoring initiatives to empower women and girls in technology through IEEE Women in Engineering Chicago Section.</p>
+</a>
+
+<a href="#ach-ieee-senior" class="achievement-card" data-category="recognition">
+<div class="achievement-icon">🎓</div>
+<h3>IEEE Senior Member</h3>
+<p class="achievement-org">IEEE</p>
+<p class="achievement-year">Ongoing</p>
+<span class="achievement-badge">Recognition</span>
+<p class="achievement-desc">Recognized as IEEE Senior Member for significant performance and contributions to the profession. Active member of IEEE Chicago Section, contributing to professional development and community initiatives.</p>
+</a>
+
+<a href="#ach-google-analytics" class="achievement-card" data-category="certification">
+<div class="achievement-icon"><i class="fab fa-google"></i></div>
+<h3>Google Analytics Certification</h3>
+<p class="achievement-org">Google</p>
+<p class="achievement-year">2024</p>
+<span class="achievement-badge">Certification</span>
+<p class="achievement-desc">Completed Google Analytics certification course, demonstrating proficiency in web analytics, data analysis, and digital marketing measurement strategies.</p>
+</a>
+
+<a href="#ach-agentic-ai" class="achievement-card" data-category="certification">
+<div class="achievement-icon">🤖</div>
+<h3>Inrtoduction to Agentic AI</h3>
+<p class="achievement-org">GenAI.Works</p>
+<p class="achievement-year">2025</p>
+<span class="achievement-badge">Certification</span>
+<p class="achievement-desc">Learned to make decisions tailored to business constraints, understand when & how to apply AI effectively & build a multi-agent application. Covered RAG, evals, agents, MCP, multi-agents, and context engineering.</p>
+</a>
+
+<a href="#ach-ieee-yp" class="achievement-card" data-category="recognition">
+<div class="achievement-icon">🎓</div>
+<h3>IEEE Young Professional</h3>
+<p class="achievement-org">IEEE</p>
+<p class="achievement-year">Ongoing</p>
+<span class="achievement-badge">Recognition</span>
+<p class="achievement-desc">Active member of IEEE Young Professionals, engaging in professional development activities, networking opportunities, and contributing to the advancement of technology and engineering.</p>
 </a>
 
 </div>
 
 </section>
 
-<!-- VOLUNTEER -->
+<!-- ACHIEVEMENT MODALS -->
 
-<section id="volunteer">
-
-<h2>Volunteer Work</h2>
-
-<div class="card">
-
-Volunteer — IEEE Women in Engineering (WIE), Chicago Section
-
-Supporting professional development, STEM outreach, and technical mentoring initiatives.
-
+<!-- Modal - AWS Certification -->
+<div id="ach-aws" class="achievement-modal">
+<div class="achievement-modal-content">
+<div class="achievement-modal-header">
+<a href="#achievements" class="achievement-modal-close">&times;</a>
+<div class="achievement-modal-icon"><i class="fab fa-aws"></i></div>
+<h3>AWS Certified Solutions Architect - Associate (SAA-C03)</h3>
+<p class="achievement-org">Amazon Web Services</p>
+<p class="achievement-year">Dec 2023 - Dec 2026</p>
+</div>
+<div class="achievement-modal-body">
+<div class="achievement-modal-section">
+<h4>About</h4>
+<p>Validates expertise in designing distributed systems on AWS, including compute, networking, storage, and database services. Demonstrates ability to architect secure and robust applications on AWS technologies.</p>
+</div>
+<div class="achievement-modal-section">
+<h4>Skills Validated</h4>
+<p>Design resilient architectures, design high-performing architectures, design secure applications and architectures, design cost-optimized architectures, and define operationally excellent architectures.</p>
+</div>
+<div class="achievement-modal-section" style="text-align:center;">
+<a href="https://www.credly.com/badges/959e7888-7ba1-486c-b33e-6aa786a45af2/public_url" target="_blank" rel="noopener noreferrer" class="achievement-verify-btn">View Credential</a>
+</div>
+</div>
+</div>
 </div>
 
-</section>
-
-<!-- MEMBERSHIP -->
-
-<section id="membership">
-
-<h2>Membership</h2>
-
-<div class="card membership">
-
-<span>IEEE Senior Member</span>
-<a href="https://ieeechicago.org/wie/" target="_blank">IEEE Women in Engineering Member</a>
-<span>IEEE Chicago Section Member</span>
-
+<!-- Modal - .NET Full Stack -->
+<div id="ach-dotnet" class="achievement-modal">
+<div class="achievement-modal-content">
+<div class="achievement-modal-header">
+<a href="#achievements" class="achievement-modal-close">&times;</a>
+<div class="achievement-modal-icon">💻</div>
+<h3>.NET Full Stack Developer Specialization</h3>
+<p class="achievement-org">Linkedin</p>
+<p class="achievement-year">2024</p>
+</div>
+<div class="achievement-modal-body">
+<div class="achievement-modal-section">
+<h4>Description</h4>
+<p>Completed comprehensive specialization in .NET full stack development, covering frontend and backend technologies, APIs, databases, and modern development practices.</p>
+</div>
+<div class="achievement-modal-section" style="text-align:center;">
+<a href="#achievements" class="achievement-verify-btn">Verify Credential</a>
+</div>
+</div>
+</div>
 </div>
 
-</section>
-
-<!-- ACHIEVEMENTS -->
-
-<section id="achievements">
-
-<h2>Achievements</h2>
-
-<div class="card ach">
-
-<span>IEEE Published Author</span>
-<span>Architected systems serving 1M+ users</span>
-<span>60% deployment performance improvement</span>
-
+<!-- Modal - IEEE WIE -->
+<div id="ach-ieee-wie" class="achievement-modal">
+<div class="achievement-modal-content">
+<div class="achievement-modal-header">
+<a href="#achievements" class="achievement-modal-close">&times;</a>
+<div class="achievement-modal-icon">👩‍💼</div>
+<h3>IEEE Women in Engineering (WIE), Treasurer Role</h3>
+<p class="achievement-org">IEEE Chicago Section</p>
+<p class="achievement-year">Ongoing</p>
+</div>
+<div class="achievement-modal-body">
+<div class="achievement-modal-section">
+<h4>Description</h4>
+<p>Supporting professional development, STEM outreach, and technical mentoring initiatives to empower women and girls in technology through IEEE Women in Engineering Chicago Section. Managing financial operations, supporting STEM outreach programs, facilitating professional development workshops, and contributing to initiatives that empower women in technology and engineering fields.</p>
+</div>
+<div class="achievement-modal-section">
+<h4>Responsibilities</h4>
+<p>Managing financial operations, supporting STEM outreach programs, facilitating professional development workshops, and contributing to initiatives that empower women in technology and engineering fields.</p>
+</div>
+<div class="achievement-modal-section" style="text-align:center;">
+<a href="https://ieeechicago.org/wie/" target="_blank" rel="noopener noreferrer" class="achievement-verify-btn">Verify Credential</a>
+</div>
+</div>
+</div>
 </div>
 
-</section>
+<!-- Modal - IEEE Senior Member -->
+<div id="ach-ieee-senior" class="achievement-modal">
+<div class="achievement-modal-content">
+<div class="achievement-modal-header">
+<a href="#achievements" class="achievement-modal-close">&times;</a>
+<div class="achievement-modal-icon">🎓</div>
+<h3>IEEE Senior Member</h3>
+<p class="achievement-org">IEEE</p>
+<p class="achievement-year">Ongoing</p>
+</div>
+<div class="achievement-modal-body">
+<div class="achievement-modal-section">
+<h4>Description</h4>
+<p>Recognized as IEEE Senior Member for significant performance and contributions to the profession. Active member of IEEE Chicago Section, contributing to professional development and community initiatives. IEEE Senior Member is a prestigious grade of membership that recognizes professional experience and demonstrated technical and professional maturity. Requires at least 10 years of professional experience with 5 years of significant performance.</p>
+</div>
+<div class="achievement-modal-section" style="text-align:center;">
+<a href="assets/IEEE-SM-Welcome-Shruti Hardia.pdf" target="_blank" class="achievement-verify-btn">Verify Credential</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal - Google Analytics -->
+<div id="ach-google-analytics" class="achievement-modal">
+<div class="achievement-modal-content">
+<div class="achievement-modal-header">
+<a href="#achievements" class="achievement-modal-close">&times;</a>
+<div class="achievement-modal-icon"><i class="fab fa-google"></i></div>
+<h3>Google Analytics Certification</h3>
+<p class="achievement-org">Google</p>
+<p class="achievement-year">2024</p>
+</div>
+<div class="achievement-modal-body">
+<div class="achievement-modal-section">
+<h4>About</h4>
+<p>Completed Google Analytics certification course, demonstrating proficiency in web analytics, data analysis, and digital marketing measurement strategies.</p>
+</div>
+<div class="achievement-modal-section">
+<h4>Skills Covered</h4>
+<p>Google Analytics platform, data collection and configuration, reporting and analysis, conversion tracking, audience segmentation, campaign measurement, and data-driven decision making.</p>
+</div>
+<div class="achievement-modal-section" style="text-align:center;">
+<a href="assets/GoogleAnalyticsCourseCertificate.pdf" target="_blank" class="achievement-verify-btn">View Credential</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal - Agentic AI -->
+<div id="ach-agentic-ai" class="achievement-modal">
+<div class="achievement-modal-content">
+<div class="achievement-modal-header">
+<a href="#achievements" class="achievement-modal-close">&times;</a>
+<div class="achievement-modal-icon">🤖</div>
+<h3>Inrtoduction to Agentic AI</h3>
+<p class="achievement-org">GenAI.Works</p>
+<p class="achievement-year">2025</p>
+</div>
+<div class="achievement-modal-body">
+<div class="achievement-modal-section">
+<h4>About</h4>
+<p>Learned to make decisions tailored to business constraints, understand when & how to apply AI effectively & build a multi-agent application.</p>
+</div>
+<div class="achievement-modal-section">
+<h4>Skills Covered</h4>
+<p>RAG (Retrieval-Augmented Generation), evaluations, AI agents, MCP (Model Context Protocol), multi-agent systems, context engineering, and problem-first approach to AI application development.</p>
+</div>
+<div class="achievement-modal-section" style="text-align:center;">
+<a href="assets/AgenticAICert.pdf" target="_blank" class="achievement-verify-btn">View Credential</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal - IEEE Young Professional -->
+<div id="ach-ieee-yp" class="achievement-modal">
+<div class="achievement-modal-content">
+<div class="achievement-modal-header">
+<a href="#achievements" class="achievement-modal-close">&times;</a>
+<div class="achievement-modal-icon">🎓</div>
+<h3>IEEE Young Professional</h3>
+<p class="achievement-org">IEEE</p>
+<p class="achievement-year">Ongoing</p>
+</div>
+<div class="achievement-modal-body">
+<div class="achievement-modal-section">
+<h4>About</h4>
+<p>Active member of IEEE Young Professionals, engaging in professional development activities, networking opportunities, and contributing to the advancement of technology and engineering.</p>
+</div>
+<div class="achievement-modal-section">
+<h4>Benefits & Activities</h4>
+<p>Access to exclusive networking events, professional development resources, mentorship opportunities, technical workshops, and collaboration with young professionals worldwide in advancing technology and innovation.</p>
+</div>
+<div class="achievement-modal-section" style="text-align:center;">
+<a href="assets/Senior-Member MEMYP060.pdf" target="_blank" class="achievement-verify-btn">View Credential</a>
+</div>
+</div>
+</div>
+</div>
 
 <!-- CONTACT -->
 
@@ -425,17 +1905,22 @@ Supporting professional development, STEM outreach, and technical mentoring init
 
 <h2>Contact</h2>
 
-<div class="card">
+<div class="contact-icons">
 
-LinkedIn  
-<br>
-https://www.linkedin.com/in/hardia-shruti
+<a href="https://www.linkedin.com/in/hardia-shruti" target="_blank" class="contact-icon linkedin">
+<div class="icon"><i class="fab fa-linkedin"></i></div>
+<span>LinkedIn</span>
+</a>
 
-<br><br>
+<a href="https://github.com/shruti-hardia" target="_blank" class="contact-icon github">
+<div class="icon"><i class="fab fa-github"></i></div>
+<span>GitHub</span>
+</a>
 
-Google Scholar  
-<br>
-https://scholar.google.com/citations?hl=en&user=JuTnrssAAAAJ
+<a href="mailto:hardia.shruti@gmail.com?subject=Responding to Your Portfolio!" class="contact-icon email">
+<div class="icon"><i class="fas fa-envelope"></i></div>
+<span>Email</span>
+</a>
 
 </div>
 
@@ -446,6 +1931,37 @@ https://scholar.google.com/citations?hl=en&user=JuTnrssAAAAJ
 © 2026 Shruti Hardia
 
 </footer>
+
+<script>
+// Achievements filtering functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const achievementCards = document.querySelectorAll('.achievement-card');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // Filter cards
+      achievementCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+
+        if (filter === 'all') {
+          card.classList.remove('hidden');
+        } else if (category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+</script>
 
 </body>
 </html>
