@@ -1545,6 +1545,893 @@ Developed .NET applications improving client satisfaction and system reliability
 
 <section id="artifacts">
     <h2>Artifacts</h2>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NutriCart AI-Powered Grocery Planner portfolio artifact by Shruti Hardia.">
+  <title>NutriCart | Portfolio Artifact</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --primary:#667eea;
+      --primary-dark:#5568d3;
+      --secondary:#5f6c72;
+      --accent:#764ba2;
+      --border:#e3e8ee;
+      --gradient:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --text:#2f3e46;
+      --success:#2f855a;
+      --success-bg:#edfdf4;
+      --shadow:0 4px 15px rgba(0,0,0,0.08);
+      --shadow-hover:0 12px 35px rgba(102,126,234,0.18);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Inter,sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:white;
+      border-bottom:1px solid var(--border);
+      padding:15px;
+      text-align:center;
+      z-index:1000;
+    }
+
+    nav a{
+      margin:0 12px;
+      text-decoration:none;
+      color:var(--secondary);
+      font-weight:500;
+      font-size:14px;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:var(--primary);
+    }
+
+    .artifact-hero{
+      min-height:68vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:110px 20px 60px;
+      background:var(--gradient);
+    }
+
+    .hero-card{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      align-items:center;
+      gap:45px;
+      max-width:1100px;
+      width:100%;
+      background:white;
+      padding:50px;
+      border-radius:15px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    .eyebrow{
+      display:inline-block;
+      color:var(--primary);
+      background:#f0f2ff;
+      border:1px solid #dfe3ff;
+      border-radius:20px;
+      padding:6px 14px;
+      font-size:12px;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:18px;
+    }
+
+    .hero-copy h1{
+      color:var(--primary);
+      font-size:42px;
+      line-height:1.15;
+      margin-bottom:15px;
+    }
+
+    .hero-subtitle{
+      color:var(--primary);
+      font-size:17px;
+      font-weight:600;
+      margin-bottom:18px;
+    }
+
+    .hero-description{
+      color:var(--secondary);
+      font-size:15px;
+      max-width:650px;
+    }
+
+    .hero-actions{
+      margin-top:24px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 18px;
+      border-radius:6px;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:500;
+      transition:.3s ease;
+    }
+
+    .btn-primary{
+      background:var(--gradient);
+      color:white;
+      box-shadow:0 4px 10px rgba(102,126,234,.3);
+    }
+
+    .btn-secondary{
+      background:white;
+      color:var(--primary);
+      border:1px solid var(--primary);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 15px rgba(102,126,234,.3);
+    }
+
+    .app-preview{
+      background:var(--bg);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .preview-header{
+      background:var(--gradient);
+      color:white;
+      border-radius:10px;
+      padding:20px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:14px;
+    }
+
+    .preview-icon{
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      background:rgba(255,255,255,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+    }
+
+    .preview-header h2{
+      font-size:20px;
+      line-height:1.2;
+    }
+
+    .preview-header p{
+      font-size:12px;
+      opacity:.9;
+    }
+
+    .preview-message{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:9px;
+      padding:13px;
+      margin-top:10px;
+      color:var(--secondary);
+      font-size:13px;
+    }
+
+    .preview-message.ai{
+      border-left:4px solid var(--primary);
+    }
+
+    .preview-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:10px;
+    }
+
+    .preview-chip{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:9px;
+      font-size:12px;
+      color:var(--secondary);
+    }
+
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:70px 20px;
+    }
+
+    .section-heading{
+      text-align:center;
+      margin-bottom:38px;
+    }
+
+    .section-heading h2{
+      font-size:30px;
+      margin-bottom:10px;
+      color:var(--text);
+    }
+
+    .section-heading p{
+      max-width:720px;
+      margin:0 auto;
+      color:var(--secondary);
+    }
+
+    .artifact-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:22px;
+    }
+
+    .artifact-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      transition:.3s ease;
+    }
+
+    .artifact-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-hover);
+    }
+
+    .artifact-card.full{
+      grid-column:1 / -1;
+    }
+
+    .card-title{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:14px;
+    }
+
+    .card-icon{
+      width:42px;
+      height:42px;
+      flex:0 0 42px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      background:var(--gradient);
+      box-shadow:0 3px 10px rgba(102,126,234,.25);
+    }
+
+    .card-title h3{
+      font-size:19px;
+      color:var(--text);
+    }
+
+    .artifact-card p,
+    .artifact-card li{
+      color:var(--secondary);
+      font-size:14.5px;
+    }
+
+    .check-list{
+      list-style:none;
+      margin-top:12px;
+    }
+
+    .check-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin-bottom:9px;
+    }
+
+    .check-list i{
+      color:var(--primary);
+      margin-top:5px;
+      font-size:12px;
+    }
+
+    .process-steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .step{
+      background:var(--bg);
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:17px;
+    }
+
+    .step-number{
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      color:white;
+      background:var(--gradient);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:10px;
+    }
+
+    .step h4{
+      font-size:14px;
+      margin-bottom:5px;
+    }
+
+    .step p{
+      font-size:12.5px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:14px;
+    }
+
+    .tag{
+      background:var(--bg);
+      border:1px solid var(--primary);
+      color:var(--text);
+      border-radius:20px;
+      padding:6px 13px;
+      font-size:12px;
+      font-weight:500;
+    }
+
+    .evidence-section{
+      margin-top:65px;
+    }
+
+    .evidence-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .evidence-card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.3s ease;
+    }
+
+    .evidence-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-hover);
+    }
+
+    .evidence-visual{
+      min-height:190px;
+      background:linear-gradient(135deg,#f2f4ff,#f9f5ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+    }
+
+    .mini-window{
+      width:100%;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:9px;
+      padding:12px;
+      box-shadow:0 5px 18px rgba(0,0,0,.08);
+    }
+
+    .mini-bar{
+      height:8px;
+      width:52%;
+      background:#e8eaff;
+      border-radius:8px;
+      margin-bottom:8px;
+    }
+
+    .mini-bar.short{width:34%}
+    .mini-bar.long{width:88%}
+    .mini-bar.medium{width:68%}
+
+    .evidence-content{
+      padding:20px;
+    }
+
+    .evidence-content h3{
+      font-size:17px;
+      margin-bottom:8px;
+    }
+
+    .evidence-content p{
+      color:var(--secondary);
+      font-size:13.5px;
+    }
+
+    .impact-banner{
+      margin-top:65px;
+      color:white;
+      background:var(--gradient);
+      border-radius:15px;
+      padding:38px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      box-shadow:0 10px 30px rgba(102,126,234,.22);
+    }
+
+    .impact-banner h2{
+      font-size:27px;
+      margin-bottom:10px;
+    }
+
+    .impact-banner p{
+      opacity:.92;
+      max-width:760px;
+    }
+
+    .impact-icon{
+      font-size:54px;
+      opacity:.9;
+    }
+
+    .references{
+      margin-top:60px;
+      background:white;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .references h2{
+      font-size:22px;
+      margin-bottom:16px;
+    }
+
+    .references p{
+      color:var(--secondary);
+      font-size:13.5px;
+      margin-bottom:9px;
+      padding-left:18px;
+      text-indent:-18px;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--secondary);
+      padding:30px 20px;
+      border-top:1px solid var(--border);
+      background:white;
+      font-size:13px;
+    }
+
+    @media(max-width:850px){
+      .hero-card{
+        grid-template-columns:1fr;
+        padding:34px 25px;
+      }
+
+      .hero-copy h1{font-size:34px}
+      .artifact-grid{grid-template-columns:1fr}
+      .artifact-card.full{grid-column:auto}
+      .process-steps{grid-template-columns:1fr 1fr}
+      .evidence-grid{grid-template-columns:1fr}
+      .impact-banner{grid-template-columns:1fr}
+      .impact-icon{display:none}
+    }
+
+    @media(max-width:550px){
+      nav{
+        overflow-x:auto;
+        white-space:nowrap;
+        text-align:left;
+      }
+
+      nav a{margin:0 8px}
+      .artifact-hero{padding-top:95px}
+      .hero-copy h1{font-size:29px}
+      .process-steps{grid-template-columns:1fr}
+      .preview-list{grid-template-columns:1fr}
+      main{padding-top:50px}
+    }
+
+    @media print{
+      nav,.hero-actions{display:none}
+      .artifact-hero{
+        min-height:auto;
+        padding:25px;
+        background:white;
+      }
+      .hero-card,.artifact-card,.evidence-card,.references{
+        box-shadow:none;
+      }
+      body{background:white}
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="Portfolio navigation">
+    <a href="index.html#home"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="#overview" class="active">Artifact Overview</a>
+    <a href="#process">Process</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#references">References</a>
+  </nav>
+
+  <header class="artifact-hero">
+    <div class="hero-card">
+      <div class="hero-copy">
+        <span class="eyebrow">Professional Portfolio Artifact</span>
+        <h1>NutriCart</h1>
+        <p class="hero-subtitle">AI-Powered Grocery Planner for Healthy, Budget-Friendly Shopping</p>
+        <p class="hero-description">
+          NutriCart is a conversational AI solution that transforms a household's budget,
+          dietary preferences, pantry inventory, and family size into a practical weekly
+          grocery plan. The project demonstrates prompt engineering, user-centered product
+          design, analytical thinking, responsible AI use, and technical communication.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#overview">
+            <i class="fa-solid fa-arrow-down"></i> Explore Artifact
+          </a>
+          <a class="btn btn-secondary" href="index.html#home">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+          </a>
+        </div>
+      </div>
+
+      <div class="app-preview" aria-label="NutriCart interface concept">
+        <div class="preview-header">
+          <div class="preview-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div>
+            <h2>NutriCart AI</h2>
+            <p>Plan smarter. Eat healthier. Waste less.</p>
+          </div>
+        </div>
+
+        <div class="preview-message">
+          Household of 4 · Weekly budget: $100 · Pantry: chicken, rice, vegetables
+        </div>
+
+        <div class="preview-message ai">
+          <strong>NutriCart:</strong> I created a balanced seven-day grocery plan using
+          your existing ingredients and prioritized affordable proteins, produce, dairy,
+          and pantry staples.
+        </div>
+
+        <div class="preview-list">
+          <div class="preview-chip">🥣 Breakfast staples</div>
+          <div class="preview-chip">🥗 Fresh produce</div>
+          <div class="preview-chip">🫘 Affordable proteins</div>
+          <div class="preview-chip">♻️ Waste-reduction plan</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <div class="section-heading">
+        <h2>Artifact Information</h2>
+        <p>
+          This entry documents the purpose, development process, technologies,
+          professional value, and tangible evidence associated with the NutriCart project.
+        </p>
+      </div>
+
+      <div class="artifact-grid">
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-circle-info"></i></div>
+            <h3>Introduction</h3>
+          </div>
+          <p>
+            NutriCart was created to explore how generative artificial intelligence can
+            support everyday decision-making. It addresses the challenge of balancing
+            nutrition, household needs, food costs, and pantry usage within one accessible
+            planning experience.
+          </p>
+        </article>
+
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <h3>Description</h3>
+          </div>
+          <p>
+            The solution accepts natural-language information such as household size,
+            weekly budget, dietary preferences, favorite foods, and ingredients already
+            available. It then produces a personalized grocery list, meal suggestions,
+            healthier substitutions, and food-waste reduction recommendations.
+          </p>
+        </article>
+
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>Objective</h3>
+          </div>
+          <p>
+            The objective was to design and test a useful AI assistant that converts
+            user requirements into clear, affordable, and actionable grocery guidance
+            while demonstrating effective prompt construction and critical evaluation
+            of AI-generated results.
+          </p>
+        </article>
+
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>Project Deliverables</h3>
+          </div>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i><span>AI-powered grocery planning workflow</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Budget-based grocery list for a household of four</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Healthy food substitution recommendations</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Pantry-aware meal and waste-reduction suggestions</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Prompt-testing documentation and final project presentation</span></li>
+          </ul>
+        </article>
+
+        <article class="artifact-card full" id="process">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Process</h3>
+          </div>
+          <p>
+            NutriCart was developed through an iterative product-design and prompt-engineering process.
+            Each stage focused on improving relevance, usability, personalization, and responsible AI output.
+          </p>
+
+          <div class="process-steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h4>Problem Definition</h4>
+              <p>Identified grocery budgeting, healthy eating, and food waste as connected user needs.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h4>User Requirements</h4>
+              <p>Defined key inputs, including budget, household size, preferences, and pantry items.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h4>Prompt Design</h4>
+              <p>Created structured prompts with context, constraints, requested format, and safety guidance.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <h4>Testing</h4>
+              <p>Compared responses for accuracy, organization, affordability, usefulness, and completeness.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">5</div>
+              <h4>Refinement</h4>
+              <p>Added clearer limits, pantry awareness, substitutions, and category-based organization.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">6</div>
+              <h4>Ethical Review</h4>
+              <p>Considered privacy, bias, transparency, food safety, and the limits of nutrition guidance.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">7</div>
+              <h4>Documentation</h4>
+              <p>Recorded prompts, outputs, findings, improvements, and lessons learned.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">8</div>
+              <h4>Portfolio Delivery</h4>
+              <p>Converted the completed work into an employer-facing professional artifact.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Tools and Technologies Used</h3>
+          </div>
+          <div class="tags">
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Generative AI</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">GitHub Pages</span>
+            <span class="tag">Microsoft PowerPoint</span>
+            <span class="tag">Microsoft Excel</span>
+          </div>
+        </article>
+
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+            <h3>Value Proposition</h3>
+          </div>
+          <p>
+            NutriCart shows my ability to turn a broad consumer problem into a structured
+            digital solution. It demonstrates how I gather requirements, create precise AI
+            instructions, evaluate generated content, organize information, and communicate
+            a product's value to both technical and nontechnical audiences.
+          </p>
+        </article>
+
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+            <h3>Unique Value</h3>
+          </div>
+          <p>
+            Unlike a static grocery checklist, NutriCart adapts its response to the user's
+            budget, household composition, dietary needs, preferences, and existing food.
+            Its integrated approach combines affordability, nutrition, convenience, and
+            sustainability in one conversational workflow.
+          </p>
+        </article>
+
+        <article class="artifact-card">
+          <div class="card-title">
+            <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Relevance</h3>
+          </div>
+          <p>
+            This artifact is relevant to artificial intelligence, product development,
+            business analysis, data analytics, UX design, digital transformation, and
+            technical communication. It provides evidence of practical AI literacy and
+            the ability to design technology around real user needs.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="evidence-section" id="evidence">
+      <div class="section-heading">
+        <h2>Tangible Artifact Evidence</h2>
+        <p>
+          The following visual components represent the completed deliverables that make
+          this entry a demonstrable portfolio artifact rather than only a project description.
+        </p>
+      </div>
+
+      <div class="evidence-grid">
+        <article class="evidence-card">
+          <div class="evidence-visual">
+            <div class="mini-window">
+              <div class="mini-bar long"></div>
+              <div class="mini-bar medium"></div>
+              <div class="mini-bar short"></div>
+              <div class="mini-bar long"></div>
+              <div class="mini-bar medium"></div>
+            </div>
+          </div>
+          <div class="evidence-content">
+            <h3>Budget Grocery Plan</h3>
+            <p>
+              A categorized weekly grocery list designed for a household of four with
+              an approximate $100 budget.
+            </p>
+          </div>
+        </article>
+
+        <article class="evidence-card">
+          <div class="evidence-visual">
+            <div class="mini-window">
+              <div class="mini-bar medium"></div>
+              <div class="preview-chip">Day 1 · Chicken rice bowls</div>
+              <div class="preview-chip">Day 2 · Vegetable pasta</div>
+              <div class="preview-chip">Day 3 · Bean tacos</div>
+            </div>
+          </div>
+          <div class="evidence-content">
+            <h3>Weekly Meal Plan</h3>
+            <p>
+              A practical seven-day meal structure that reuses ingredients across meals
+              to support affordability and reduce waste.
+            </p>
+          </div>
+        </article>
+
+        <article class="evidence-card">
+          <div class="evidence-visual">
+            <div class="mini-window">
+              <div class="mini-bar long"></div>
+              <div class="preview-chip">Sugary cereal → oatmeal</div>
+              <div class="preview-chip">Chips → popcorn</div>
+              <div class="preview-chip">Soda → flavored water</div>
+            </div>
+          </div>
+          <div class="evidence-content">
+            <h3>Healthy Alternatives</h3>
+            <p>
+              AI-generated substitutions that preserve convenience and taste while
+              improving nutritional value.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="impact-banner">
+      <div>
+        <h2>Professional Impact</h2>
+        <p>
+          NutriCart demonstrates that I can apply emerging technology to a real consumer
+          challenge, evaluate AI output rather than accepting it uncritically, and present
+          the completed work as a polished, useful, and transferable professional solution.
+        </p>
+      </div>
+      <div class="impact-icon"><i class="fa-solid fa-seedling"></i></div>
+    </section>
+
+    <section class="references" id="references">
+      <h2>References</h2>
+      <p>
+        OpenAI. (2026). <em>ChatGPT</em> [Large language model].
+      </p>
+      <p>
+        U.S. Department of Agriculture. (n.d.). <em>MyPlate</em>. https://www.myplate.gov/
+      </p>
+      <p>
+        Harvard T.H. Chan School of Public Health. (n.d.).
+        <em>The Nutrition Source</em>. https://www.hsph.harvard.edu/nutritionsource/
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Shruti Hardia · NutriCart Professional Portfolio Artifact
+  </footer>
+</body>
+</html>
 </section>  
     
 <!-- PROJECTS - Hidden for now, will work on it later -->
