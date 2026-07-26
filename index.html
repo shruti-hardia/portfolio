@@ -1500,6 +1500,32 @@ padding-right:10px;
 }
 }
 
+    .nn-visual {
+display:flex;
+align-items:center;
+justify-content:center;
+gap:18px;
+padding:25px;
+}
+
+.nn-layer {
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.nn-layer span {
+width:22px;
+height:22px;
+border-radius:50%;
+background:#2563eb;
+display:block;
+}
+
+.nn-line {
+font-size:28px;
+font-weight:bold;
+}
 </style>
 </head>
 <body>
@@ -2071,7 +2097,7 @@ grocery plans using household size, spending limits, dietary preferences, and pa
 <div class="artifact-summary-card">
 <div class="artifact-summary-header">
 <div class="artifact-summary-icon">
-<i class="fa-solid fa-cart-shopping"></i>
+<i class="fa-solid fa-solid fa-brain"></i>
 </div>
 <div>
 <h3>Machine Learning vs. Deep Learning</h3>
@@ -2106,30 +2132,33 @@ grocery plans using household size, spending limits, dietary preferences, and pa
 <div class="artifact-summary-card">
 <div class="artifact-summary-header">
 <div class="artifact-summary-icon">
-<i class="fa-solid fas fa-brain"></i>
+<i class="fa-solid fa-network-wired"></i>
 </div>
 <div>
 <h3>Neural Networks: Learning from Mistakes</h3>
-<p class="artifact-type">Explaining Deep Learning Through Real-World Analogies</p>
+<p class="artifact-type">AI Education & Deep Learning Case Study</p>
 </div>
 </div>
 
 <p class="artifact-summary-desc">
-TO DO:
+An educational case study explaining how neural networks learn through
+    training, feedback, and weight adjustment using a real-world spam email
+    detection analogy.
 </p>
 
 <div class="exp-tags">
-<span class="exp-tag">AI Education</span>
-<span class="exp-tag">Deep Learning</span>
-<span class="exp-tag">Neural Network</span>
-<span class="exp-tag">Machine Learning</span>
-<span class="exp-tag-more">+4 more</span>
+    <span class="exp-tag">Neural Networks</span>
+    <span class="exp-tag">Deep Learning</span>
+    <span class="exp-tag">AI Communication</span>
+    <span class="exp-tag">Pattern Recognition</span>
+    <span class="exp-tag-more">+4 more</span>
 </div>
 
 <div class="artifact-actions">
-<a href="#artifact-nutricart" class="artifact-btn">
-<i class="fa-solid fa-eye"></i> View Details
-</a>
+    <a href="#artifact-neural-network" class="artifact-btn">
+      <i class="fa-solid fa-eye"></i>
+      View Details
+    </a>
 </div>
 </div>
 </div>
@@ -2630,7 +2659,318 @@ https://www.hsph.harvard.edu/nutritionsource/
     </div>
   </div>
 </div>    
+    
+<!-- ARTIFACT 3 MODAL -->
+<div id="artifact-neural-network" class="artifact-modal">
 
+<div class="artifact-modal-content"
+role="dialog"
+aria-modal="true"
+aria-labelledby="neural-network-modal-title">
+<!-- Header -->
+<div class="artifact-modal-header">
+<a href="#artifacts"
+class="artifact-modal-close"
+aria-label="Close neural network artifact">
+&times;
+</a>
+<div class="artifact-modal-heading">
+
+<div class="artifact-modal-icon">
+<i class="fa-solid fa-network-wired"></i>
+</div>
+<div>
+<h3 id="neural-network-modal-title">
+Neural Networks: Learning from Mistakes
+</h3>
+
+<p class="artifact-modal-subtitle">
+Explaining Deep Learning Through Real-World Analogies
+</p>
+</div>
+
+</div>
+
+</div>
+<!-- Tabs -->
+
+<div class="artifact-tabs"
+role="tablist"
+aria-label="Neural network artifact details">
+<button class="artifact-tab-btn active"
+type="button"
+data-tab="nn-overview">
+Artifact Overview
+</button>
+<button class="artifact-tab-btn"
+type="button"
+data-tab="nn-process">
+Process
+</button>
+<button class="artifact-tab-btn"
+type="button"
+data-tab="nn-evidence">
+Evidence
+</button>
+<button class="artifact-tab-btn"
+type="button"
+data-tab="nn-references">
+References
+</button>
+</div>
+<div class="artifact-modal-body">
+<!-- OVERVIEW -->
+<div id="nn-overview"
+class="artifact-tab-panel active">
+<div class="artifact-detail-grid">
+<div class="artifact-detail-card">
+<h4>Introduction</h4>
+<p>
+Neural networks are a foundational technology in artificial intelligence
+that enables systems to recognize patterns, make predictions, and improve
+through experience.
+</p>
+
+</div>
+<div class="artifact-detail-card">
+<h4>Description</h4>
+<p>
+This artifact explains neural networks using a spam email detection analogy.
+The explanation demonstrates how input data, hidden layers, weights, and
+outputs work together to produce predictions.
+</p>
+
+</div>
+<div class="artifact-detail-card">
+<h4>Objective</h4>
+<p>
+The objective was to translate a complex deep learning concept into an
+accessible explanation while maintaining technical accuracy and highlighting
+responsible AI considerations.
+</p>
+
+</div>
+<div class="artifact-detail-card">
+
+<h4>Value Proposition</h4>
+<p>
+This artifact demonstrates my ability to communicate advanced AI concepts
+to both technical and non-technical audiences through clear explanations
+and practical examples.
+</p>
+</div>
+<div class="artifact-detail-card">
+<h4>Unique Value</h4>
+<p>
+Instead of only describing neural networks mathematically, this project
+connects deep learning concepts with human learning processes such as
+practice, feedback, and improvement.
+</p>
+
+</div>
+<div class="artifact-detail-card">
+
+<h4>Relevance</h4>
+
+<p>
+This work is relevant to AI education, machine learning engineering,
+technical communication, AI consulting, and responsible AI implementation.
+</p>
+</div>
+<div class="artifact-detail-card full">
+<h4>
+Tools and Technologies Used
+</h4>
+<div class="artifact-tools">
+<span class="exp-tag">Neural Networks</span>
+<span class="exp-tag">Deep Learning</span>
+<span class="exp-tag">Machine Learning</span>
+<span class="exp-tag">ChatGPT</span>
+<span class="exp-tag">Technical Writing</span>
+<span class="exp-tag">Research</span>
+<span class="exp-tag">Microsoft Word</span>
+<span class="exp-tag">APA 7</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- PROCESS -->
+
+<div id="nn-process"
+class="artifact-tab-panel">
+
+<div class="artifact-step-list">
+
+<div class="artifact-step">
+
+<h4>Concept Review</h4>
+
+<p>
+Reviewed neural network architecture including input layers, hidden layers,
+output layers, weights, and training processes.
+</p>
+
+</div>
+<div class="artifact-step">
+
+<h4>Analogy Development</h4>
+
+<p>
+Created a spam email classification example to explain how neural networks
+identify patterns and make predictions.
+</p>
+
+</div>
+<div class="artifact-step">
+
+<h4>Learning Design</h4>
+<p>
+Applied chunking, storytelling, and progressive disclosure techniques to
+make technical information easier to understand.
+</p>
+
+</div>
+<div class="artifact-step">
+<h4>Technical Validation</h4>
+<p>
+Reviewed the explanation to ensure accuracy while clarifying that neural
+networks use mathematical calculations rather than human reasoning.
+</p>
+
+</div>
+<div class="artifact-step">
+
+<h4>Responsible AI Review</h4>
+
+<p>
+Included discussion of training data quality, bias, fairness, and the
+importance of human oversight.
+</p>
+</div>
+<div class="artifact-step">
+<h4>Portfolio Enhancement</h4>
+<p>
+Converted an academic explanation into a professional artifact demonstrating
+AI knowledge and communication skills.
+</p>
+</div>
+</div>
+</div>
+<!-- EVIDENCE -->
+<div id="nn-evidence"
+class="artifact-tab-panel">
+<div class="artifact-evidence-grid">
+<div class="artifact-evidence-card">
+<div class="artifact-evidence-visual">
+<div class="artifact-mini-window">
+<div class="artifact-mini-chip">
+Input Layer: Email Data
+</div>
+<div class="artifact-mini-chip">
+Sender • Words • Links
+</div>
+<div class="artifact-mini-chip">
+Pattern Detection
+</div>
+</div>
+</div>
+<div class="artifact-evidence-copy">
+<h4>
+Neural Network Architecture
+</h4>
+<p>
+The input layer receives information, hidden layers identify patterns,
+and the output layer generates the final prediction.
+</p>
+</div>
+</div>
+<div class="artifact-evidence-card">
+<div class="artifact-evidence-visual">
+<div class="nn-visual">
+<div class="nn-layer">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="nn-line">
+→
+</div>
+<div class="nn-layer">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="nn-line">
+→
+</div>
+<div class="nn-layer">
+<span></span>
+</div>
+</div>
+</div>
+<div class="artifact-evidence-copy">
+<h4>
+Learning Through Mistakes
+</h4>
+<p>
+During training, incorrect predictions cause the model to adjust weights.
+Repeated feedback improves future predictions.
+</p>
+</div>
+</div>
+<div class="artifact-evidence-card">
+<div class="artifact-evidence-visual">
+<div class="artifact-mini-window">
+<div class="artifact-mini-chip">
+Prediction
+</div>
+<div class="artifact-mini-chip">
+Compare Result
+</div>
+<div class="artifact-mini-chip">
+Adjust Weights
+</div>
+<div class="artifact-mini-chip">
+Improve Accuracy
+</div>
+</div>
+</div>
+<div class="artifact-evidence-copy">
+<h4>
+Training Process</h4>
+<p>
+This artifact demonstrates the relationship between training data,
+feedback loops, optimization, and improved model performance.
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- REFERENCES -->
+
+<div id="nn-references"
+class="artifact-tab-panel">
+<ul class="artifact-reference-list">
+<li>
+Google for Developers. (2025).
+<em>Introduction to Neural Networks.</em>
+</li>
+<li>
+IBM. (n.d.).
+<em>What Are Neural Networks?</em>
+</li>
+<li>
+OpenAI. (2026).
+<em>ChatGPT</em> [Large language model].
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>    
 <!-- PROJECTS - Hidden for now, will work on it later -->
 <!--
 <section id="projects">
