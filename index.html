@@ -3051,144 +3051,335 @@ OpenAI. (2026).
 </div>   
 
 <!-- Artifact 4 Modal -->
-<div class="artifact-modal" id="artifact-fraud-detection">
-  <div class="artifact-modal-content">
-    <span class="close-artifact">&times;</span>
-    <h2>Fraud Detection AI: Beyond Accuracy</h2>
-    <p class="artifact-subtitle">
-      Machine Learning Case Study | AI Model Evaluation & Data Challenges
-    </p>
-    <!-- Tabs -->
-    <div class="artifact-tabs">
-      <button class="artifact-tab active"
-      data-tab="fraud-overview">
-        Artifact Overview
-      </button>
-      <button class="artifact-tab"
-      data-tab="fraud-process">
-        Process
-      </button>
-      <button class="artifact-tab"
-      data-tab="fraud-evidence">
-        Evidence
-      </button>
-      <button class="artifact-tab"
-      data-tab="fraud-references">
-        References
-      </button>
-    </div>
-    <!-- Overview -->
-    <div class="artifact-tab-content active"
-    id="fraud-overview">
-      <h3>Artifact Overview</h3>
-      <p>
-        This artifact explores a real-world machine learning challenge:
-        detecting fraudulent transactions in a highly imbalanced dataset.
-        The case study demonstrates why traditional accuracy metrics can fail
-        when the minority class is the most important prediction.
-      </p>
-      <p>
-        A fraud detection model trained on one million transactions achieved
-        99.5% accuracy; however, deeper analysis revealed that the model was
-        missing most fraudulent transactions. This highlights the importance
-        of selecting evaluation metrics aligned with business objectives.
-      </p>
+<div id="artifact-fraud-detection"
+class="artifact-modal">
 
-      <h4>Key Concepts Demonstrated</h4>
-      <ul>
-        <li>Class imbalance challenges</li>
-        <li>Precision, Recall, and F1-score evaluation</li>
-        <li>Confusion matrix interpretation</li>
-        <li>Classification threshold tuning</li>
-        <li>Machine learning model improvement strategies</li>
-      </ul>
-    </div>
-    <!-- Process -->
-    <div class="artifact-tab-content"
-    id="fraud-process">
-      <h3>Process</h3>
-      <ol>
-        <li>
-          <strong>Problem Identification:</strong>
-          Analyzed why a 99.5% accuracy model failed to detect fraud.
-        </li>
-        <li>
-          <strong>Metric Selection:</strong>
-          Evaluated model performance using precision, recall, and F1-score
-          instead of relying only on accuracy.
-        </li>
-        <li>
-          <strong>Confusion Matrix Analysis:</strong>
-          Studied false positives and false negatives to understand model
-          errors.
-        </li>
-        <li>
-          <strong>Class Imbalance Handling:</strong>
-          Explored techniques including SMOTE, undersampling, and class
-          weighting.
-        </li>
-        <li>
-          <strong>Threshold Optimization:</strong>
-          Adjusted prediction thresholds to balance fraud detection and
-          customer experience.
-        </li>
-      </ol>
-    </div>
-    <!-- Evidence -->
-    <div class="artifact-tab-content"
-    id="fraud-evidence">
-      <h3>Evidence</h3>
-      <div class="evidence-item">
-        <i class="fa-solid fa-chart-column"></i>
-        <span>
-          Analysis of imbalanced dataset:
-          5,000 fraudulent transactions vs 995,000 legitimate transactions
-        </span>
-      </div>
-      <div class="evidence-item">
-        <i class="fa-solid fa-table"></i>
-        <span>
-          Confusion matrix demonstrating True Positives, False Positives,
-          False Negatives, and True Negatives
-        </span>
-      </div>
-      <div class="evidence-item">
-        <i class="fa-solid fa-chart-line"></i>
-        <span>
-          Precision-Recall tradeoff analysis for selecting optimal model
-          thresholds
-        </span>
-      </div>
-      <div class="evidence-item">
-        <i class="fa-solid fa-brain"></i>
-        <span>
-          Documented machine learning decision-making process and evaluation
-          strategy
-        </span>
-      </div>
+<div class="artifact-modal-content"
+role="dialog"
+aria-modal="true"
+aria-labelledby="fraud-modal-title">
+<!-- Header -->
+<div class="artifact-modal-header">
+<a href="#artifacts"
+class="artifact-modal-close"
+aria-label="Close fraud detection artifact">
+&times;
+</a>
+<div class="artifact-modal-heading">
+<div class="artifact-modal-icon">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+<div>
+<h3 id="fraud-modal-title">
+Fraud Detection AI: Beyond Accuracy
+</h3>
+<p class="artifact-modal-subtitle">
+Machine Learning Case Study | AI Model Evaluation & Data Challenges
+</p>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="artifact-tabs"
+role="tablist"
+aria-label="Fraud detection artifact details">
+<button class="artifact-tab-btn active"
+type="button"
+data-tab="fraud-overview">
+Artifact Overview
+</button>
+<button class="artifact-tab-btn"
+type="button"
+data-tab="fraud-process">
+Process
+</button>
+<button class="artifact-tab-btn"
+type="button"
+data-tab="fraud-evidence">
+Evidence
+</button>
+<button class="artifact-tab-btn"
+type="button"
+data-tab="fraud-references">
+References
+</button>
+</div>
+<div class="artifact-modal-body">
 
-    </div>
-    <!-- References -->
-    <div class="artifact-tab-content"
-    id="fraud-references">
-      <h3>References</h3>
-      <ul>
-        <li>
-          Scikit-learn Documentation —
-          Classification Metrics and Model Evaluation
-        </li>
-        <li>
-          Chawla et al. —
-          SMOTE: Synthetic Minority Over-sampling Technique
-        </li>
-        <li>
-          Google Machine Learning Guide —
-          Classification: Precision and Recall
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>    
+<!-- OVERVIEW -->
+<div id="fraud-overview"
+class="artifact-tab-panel active">
+<div class="artifact-detail-grid">
+<div class="artifact-detail-card">
+<h4>
+Introduction
+</h4>
+<p>
+Fraud detection is a real-world machine learning application where
+identifying rare events is more important than achieving high accuracy.
+This artifact explores how AI models can be improved when working with
+imbalanced datasets.
+</p>
+</div>
+<div class="artifact-detail-card">
+<h4>
+Problem Statement
+</h4>
+<p>
+A fraud detection model was trained on one million transactions where only
+0.5% represented fraudulent activity. Although the model achieved 99.5%
+accuracy, it failed to identify most fraudulent transactions.
+</p>
+</div>
+<div class="artifact-detail-card">
+<h4>
+Why Accuracy Failed
+</h4>
+<p>
+Accuracy was misleading because the dataset contained far more legitimate
+transactions than fraudulent ones. A model predicting "not fraud" most of
+the time could still appear highly accurate.
+</p>
+</div>
+<div class="artifact-detail-card">
+<h4>
+Evaluation Strategy
+</h4>
+<p>
+The model was evaluated using precision, recall, F1-score, and confusion
+matrix analysis to better understand fraud detection performance.
+</p>
+</div>
+<div class="artifact-detail-card">
+<h4>
+Class Imbalance Solutions
+</h4>
+<p>
+Explored machine learning techniques including SMOTE, undersampling, and
+class weighting to improve the model's ability to detect fraudulent cases.
+</p>
+</div>
+<div class="artifact-detail-card">
+<h4>
+Business Impact</h4>
+<p>
+The case study demonstrates how AI teams balance fraud prevention,
+customer experience, and operational efficiency when deploying ML models.
+</p>
+</div>
+<div class="artifact-detail-card full">
+<h4>
+Tools and Technologies Used
+</h4>
+<div class="artifact-tools">
+<span class="exp-tag">
+Machine Learning
+</span>
+<span class="exp-tag">
+Classification Models
+</span>
+<span class="exp-tag">
+Precision & Recall
+</span>
+<span class="exp-tag">
+F1 Score
+</span>
+<span class="exp-tag">
+Confusion Matrix
+</span>
+<span class="exp-tag">
+SMOTE
+</span>
+<span class="exp-tag">
+Data Analysis
+</span>
+<span class="exp-tag">
+AI Evaluation
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PROCESS -->
+<div id="fraud-process"
+class="artifact-tab-panel">
+<div class="artifact-step-list">
+<div class="artifact-step">
+<h4>
+1. Identify the Challenge
+</h4>
+<p>
+Analyzed why a model with 99.5% accuracy was ineffective at detecting
+fraudulent transactions.
+</p>
+</div>
+<div class="artifact-step">
+<h4>
+2. Select Appropriate Metrics
+</h4>
+<p>
+Focused on precision, recall, and F1-score instead of accuracy alone
+because fraud cases represented a small percentage of the dataset.
+</p>
+</div>
+<div class="artifact-step">
+<h4>
+3. Analyze Model Errors
+</h4>
+<p>
+Used confusion matrix analysis to understand false positives and false
+negatives.
+</p>
+</div>
+<div class="artifact-step">
+<h4>
+4. Address Data Imbalance
+</h4>
+<p>
+Explored oversampling, undersampling, and class-weight approaches to
+improve minority class detection.
+</p>
+</div>
+<div class="artifact-step">
+<h4>
+5. Optimize Prediction Threshold
+</h4>
+<p>
+Adjusted classification thresholds to balance fraud detection capability
+with customer experience.
+</p>
+</div>
+<div class="artifact-step">
+<h4>
+6. Production ML Considerations
+</h4>
+<p>
+Considered continuous monitoring and model improvement as fraud patterns
+change over time.
+</p>
+</div>
+</div>
+</div>
+
+<!-- EVIDENCE -->
+<div id="fraud-evidence"
+class="artifact-tab-panel">
+<div class="artifact-evidence-grid">
+<div class="artifact-evidence-card">
+<div class="artifact-evidence-visual">
+<div class="artifact-mini-window">
+<div class="artifact-mini-chip">
+1,000,000 Transactions
+</div>
+<div class="artifact-mini-chip">
+995,000 Legitimate
+</div>
+<div class="artifact-mini-chip">
+5,000 Fraud Cases
+</div>
+</div>
+</div>
+<div class="artifact-evidence-copy">
+<h4>
+Imbalanced Dataset Analysis
+</h4>
+<p>
+Demonstrates why traditional accuracy metrics can hide poor performance
+when one class dominates the dataset.
+</p>
+</div>
+</div>
+<div class="artifact-evidence-card">
+<div class="artifact-evidence-visual">
+<div class="artifact-mini-window">
+<div class="artifact-mini-chip">
+True Positive
+</div>
+<div class="artifact-mini-chip">
+False Positive
+</div>
+<div class="artifact-mini-chip">
+False Negative
+</div>
+<div class="artifact-mini-chip">
+True Negative
+</div>
+</div>
+</div>
+<div class="artifact-evidence-copy">
+<h4>
+Confusion Matrix Evaluation
+</h4>
+<p>
+Shows how machine learning teams analyze prediction errors and prioritize
+reducing missed fraud cases.
+</p>
+</div>
+</div>
+<div class="artifact-evidence-card">
+<div class="artifact-evidence-visual">
+<div class="artifact-mini-window">
+<div class="artifact-mini-chip">
+Lower Threshold
+</div>
+<div class="artifact-mini-chip">
+Higher Recall
+</div>
+<div class="artifact-mini-chip">
+More Fraud Detection
+</div>
+</div>
+</div>
+<div class="artifact-evidence-copy">
+<h4>
+Threshold Optimization
+</h4>
+<p>
+Demonstrates the trade-off between detecting more fraud and increasing
+false alerts.
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- REFERENCES -->
+<div id="fraud-references"
+class="artifact-tab-panel">
+<ul class="artifact-reference-list">
+<li>
+Scikit-learn Documentation.
+<em>
+Classification Metrics and Model Evaluation.
+</em>
+</li>
+<li>
+Chawla et al. (2002).
+<em>
+SMOTE: Synthetic Minority Over-sampling Technique.
+</em>
+</li>
+<li>
+Google Machine Learning Guide.
+<em>
+Classification: Precision and Recall.
+</em>
+</li>
+<li>
+OpenAI. (2026).
+<em>
+ChatGPT
+</em>
+[Large language model].
+</li>
+</ul>
+</div>
+</div>
+<!-- artifact-modal-body -->
+</div>
+<!-- artifact-modal-content -->
+</div>
+<!-- artifact-modal -->
+    
 <!-- PROJECTS - Hidden for now, will work on it later -->
 <!--
 <section id="projects">
