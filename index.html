@@ -1527,46 +1527,37 @@ font-size:28px;
 font-weight:bold;
 }
 
-/* Fraud Detection Artifact Visualization */
-
+/* Fraud Detection Artifact Visuals */
 .fraud-matrix {
-  display: grid;
-  grid-template-columns: repeat(2, 120px);
-  gap: 12px;
-  justify-content: center;
-  padding: 25px;
+display:grid;
+grid-template-columns:repeat(2,120px);
+gap:12px;
+justify-content:center;
+padding:25px;
 }
-
 
 .fraud-box {
-  padding: 18px 10px;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.fraud-label {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 10px;
+padding:18px 10px;
+border-radius:8px;
+text-align:center;
+font-size:14px;
+font-weight:600;
 }
 
 .fraud-flow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 25px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+padding:25px;
 }
 
 .fraud-step {
-  padding: 12px 18px;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 14px;
-}    
+padding:12px 18px;
+border-radius:8px;
+text-align:center;
+font-size:14px;
+}
 </style>
 </head>
 <body>
@@ -2204,6 +2195,7 @@ An educational case study explaining how neural networks learn through
 </div>
 </div>
 
+<br/>  
 <!-- Artifact 4: Fraud Detection AI -->
 <div class="artifact-summary-card">
   <div class="artifact-summary-header">
@@ -2216,16 +2208,36 @@ An educational case study explaining how neural networks learn through
     </div>
   </div>
 
-  <p class="artifact-summary">
+  <p class="artifact-summary-desc">
     A machine learning case study exploring how AI models handle highly
     imbalanced datasets in fraud detection. This artifact demonstrates why
-    accuracy alone can be misleading and highlights the importance of precision,
-    recall, F1-score, confusion matrices, and threshold optimization.
+    accuracy alone can be misleading and highlights the importance of
+    precision, recall, F1-score, confusion matrices, and threshold tuning.
   </p>
-
-  <button class="view-artifact-btn" data-modal="artifact-fraud">
-    View Details
-  </button>
+  <div class="exp-tags">
+    <span class="exp-tag">
+      Machine Learning
+    </span>
+    <span class="exp-tag">
+      Fraud Detection
+    </span>
+    <span class="exp-tag">
+      Model Evaluation
+    </span>
+    <span class="exp-tag">
+      Precision Recall
+    </span>
+    <span class="exp-tag-more">
+      +4 more
+    </span>
+  </div>
+  <div class="artifact-actions">
+    <a href="#artifact-fraud-detection"
+    class="artifact-btn">
+      <i class="fa-solid fa-eye"></i>
+      View Details
+    </a>
+  </div>
 </div>
     
 </section>
