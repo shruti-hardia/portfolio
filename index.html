@@ -1526,6 +1526,47 @@ display:block;
 font-size:28px;
 font-weight:bold;
 }
+
+/* Fraud Detection Artifact Visualization */
+
+.fraud-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  gap: 12px;
+  justify-content: center;
+  padding: 25px;
+}
+
+
+.fraud-box {
+  padding: 18px 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fraud-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.fraud-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 25px;
+}
+
+.fraud-step {
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}    
 </style>
 </head>
 <body>
@@ -2162,6 +2203,31 @@ An educational case study explaining how neural networks learn through
 </div>
 </div>
 </div>
+
+<!-- Artifact 4: Fraud Detection AI -->
+<div class="artifact-summary-card">
+  <div class="artifact-summary-header">
+    <div class="artifact-summary-icon">
+      <i class="fa-solid fa-shield-halved"></i>
+    </div>
+    <div>
+      <h3>Fraud Detection AI: Beyond Accuracy</h3>
+      <p class="artifact-type">Machine Learning Case Study</p>
+    </div>
+  </div>
+
+  <p class="artifact-summary">
+    A machine learning case study exploring how AI models handle highly
+    imbalanced datasets in fraud detection. This artifact demonstrates why
+    accuracy alone can be misleading and highlights the importance of precision,
+    recall, F1-score, confusion matrices, and threshold optimization.
+  </p>
+
+  <button class="view-artifact-btn" data-modal="artifact-fraud">
+    View Details
+  </button>
+</div>
+    
 </section>
 
 <!-- NUTRICART ARTIFACT MODAL -->
@@ -2970,6 +3036,146 @@ OpenAI. (2026).
 </div>
 </div>
 </div>
+</div>   
+
+<!-- Artifact 4 Modal -->
+<div class="artifact-modal" id="artifact-fraud">
+  <div class="artifact-modal-content">
+    <span class="close-artifact">&times;</span>
+    <h2>Fraud Detection AI: Beyond Accuracy</h2>
+    <p class="artifact-subtitle">
+      Machine Learning Case Study | AI Model Evaluation & Data Challenges
+    </p>
+    <!-- Tabs -->
+    <div class="artifact-tabs">
+      <button class="artifact-tab active"
+      data-tab="fraud-overview">
+        Artifact Overview
+      </button>
+      <button class="artifact-tab"
+      data-tab="fraud-process">
+        Process
+      </button>
+      <button class="artifact-tab"
+      data-tab="fraud-evidence">
+        Evidence
+      </button>
+      <button class="artifact-tab"
+      data-tab="fraud-references">
+        References
+      </button>
+    </div>
+    <!-- Overview -->
+    <div class="artifact-tab-content active"
+    id="fraud-overview">
+      <h3>Artifact Overview</h3>
+      <p>
+        This artifact explores a real-world machine learning challenge:
+        detecting fraudulent transactions in a highly imbalanced dataset.
+        The case study demonstrates why traditional accuracy metrics can fail
+        when the minority class is the most important prediction.
+      </p>
+      <p>
+        A fraud detection model trained on one million transactions achieved
+        99.5% accuracy; however, deeper analysis revealed that the model was
+        missing most fraudulent transactions. This highlights the importance
+        of selecting evaluation metrics aligned with business objectives.
+      </p>
+
+      <h4>Key Concepts Demonstrated</h4>
+      <ul>
+        <li>Class imbalance challenges</li>
+        <li>Precision, Recall, and F1-score evaluation</li>
+        <li>Confusion matrix interpretation</li>
+        <li>Classification threshold tuning</li>
+        <li>Machine learning model improvement strategies</li>
+      </ul>
+    </div>
+    <!-- Process -->
+    <div class="artifact-tab-content"
+    id="fraud-process">
+      <h3>Process</h3>
+      <ol>
+        <li>
+          <strong>Problem Identification:</strong>
+          Analyzed why a 99.5% accuracy model failed to detect fraud.
+        </li>
+        <li>
+          <strong>Metric Selection:</strong>
+          Evaluated model performance using precision, recall, and F1-score
+          instead of relying only on accuracy.
+        </li>
+        <li>
+          <strong>Confusion Matrix Analysis:</strong>
+          Studied false positives and false negatives to understand model
+          errors.
+        </li>
+        <li>
+          <strong>Class Imbalance Handling:</strong>
+          Explored techniques including SMOTE, undersampling, and class
+          weighting.
+        </li>
+        <li>
+          <strong>Threshold Optimization:</strong>
+          Adjusted prediction thresholds to balance fraud detection and
+          customer experience.
+        </li>
+      </ol>
+    </div>
+    <!-- Evidence -->
+    <div class="artifact-tab-content"
+    id="fraud-evidence">
+      <h3>Evidence</h3>
+      <div class="evidence-item">
+        <i class="fa-solid fa-chart-column"></i>
+        <span>
+          Analysis of imbalanced dataset:
+          5,000 fraudulent transactions vs 995,000 legitimate transactions
+        </span>
+      </div>
+      <div class="evidence-item">
+        <i class="fa-solid fa-table"></i>
+        <span>
+          Confusion matrix demonstrating True Positives, False Positives,
+          False Negatives, and True Negatives
+        </span>
+      </div>
+      <div class="evidence-item">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>
+          Precision-Recall tradeoff analysis for selecting optimal model
+          thresholds
+        </span>
+      </div>
+      <div class="evidence-item">
+        <i class="fa-solid fa-brain"></i>
+        <span>
+          Documented machine learning decision-making process and evaluation
+          strategy
+        </span>
+      </div>
+
+    </div>
+    <!-- References -->
+    <div class="artifact-tab-content"
+    id="fraud-references">
+      <h3>References</h3>
+      <ul>
+        <li>
+          Scikit-learn Documentation —
+          Classification Metrics and Model Evaluation
+        </li>
+        <li>
+          Chawla et al. —
+          SMOTE: Synthetic Minority Over-sampling Technique
+        </li>
+        <li>
+          Google Machine Learning Guide —
+          Classification: Precision and Recall
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>    
 <!-- PROJECTS - Hidden for now, will work on it later -->
 <!--
@@ -3464,58 +3670,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-<!-- 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const artifactModal = document.getElementById("artifact-nutricart");
-
-  if (!artifactModal) return;
-
-  const tabButtons = artifactModal.querySelectorAll(".artifact-tab-btn");
-  const tabPanels = artifactModal.querySelectorAll(".artifact-tab-panel");
-
-  tabButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      const targetId = button.getAttribute("data-tab");
-
-      tabButtons.forEach(function (item) {
-        item.classList.remove("active");
-      });
-
-      tabPanels.forEach(function (panel) {
-        panel.classList.remove("active");
-      });
-
-      button.classList.add("active");
-      document.getElementById(targetId).classList.add("active");
-    });
-  });
-
-  artifactModal.addEventListener("click", function (event) {
-    if (event.target === artifactModal) {
-      window.location.hash = "artifacts";
-    }
-  });
-
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && window.location.hash === "#artifact-nutricart") {
-      window.location.hash = "artifacts";
-    }
-  });
-
-  window.addEventListener("hashchange", function () {
-    if (window.location.hash === "#artifact-nutricart") {
-      tabButtons.forEach(function (item, index) {
-        item.classList.toggle("active", index === 0);
-      });
-
-      tabPanels.forEach(function (panel, index) {
-        panel.classList.toggle("active", index === 0);
-      });
-    }
-  });
-});
-</script> -->
 
 </body>
 </html>
